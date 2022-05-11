@@ -7,6 +7,7 @@
 :: created by Barbara Malta ::
 :: thank you for visiting! ::
 :: barbara@mb-malta.co.uk::
+
 -->
 
 <!DOCTYPE html>
@@ -27,16 +28,16 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <!-- styles, fonts -->
-    <link rel="preload" href="img/sea.png" as="image">
+    <link rel="preload" href="img/tape.jpg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&family=Supermercado+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap" rel="stylesheet">
     <link href="styles/dark.css" rel="stylesheet">
 
     <!-- scripts -->
-    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
    
-    <script src="js/jquery.flip.min.js" charset="utf-8" defer></script>
+     <!-- <script src="js/jquery.flip.min.js" charset="utf-8" defer></script>
     <script src="js/swiped-events.js" charset="utf-8" defer></script>-->
      <script src="https://kit.fontawesome.com/2a2cd0823a.js" crossorigin="anonymous"></script>
      <script src="js/index.js" charset="utf-8" defer></script> 
@@ -44,60 +45,85 @@
 
 <body>
 
-  <nav class="links">
-    <ul>
-      <li>
-    <a href="">about</a>
-      </li>
-    <li>
-      <a href="">works</a>
-    </li>
-        <li>
-          <a href="">contact</a>
-        </li>
-</ul>
-        <hr>
-  </nav>
-
-  <nav class="icons">
-    <ul>
-      <li>
-    <a href="mailto:barbara@mb-malta.co.uk"><i class="fa-solid fa-envelope"></i></a>
-      </li>
-    <li>
-      <a href="https://github.com/Star-Squid"><i class="fa-brands fa-github"></i></a>
-    </li>
-    <li>
-      <a href="https://stackoverflow.com/users/17976833/star-squid"><i class="fa-brands fa-stack-overflow"></i></a>
-    </li>
-    <li>
-      <a href="https://uk.linkedin.com/barbara-malta"><i class="fa-brands fa-linkedin"></i></a>
-    </li>
-</ul>
-  </nav>
-
   <div class="container">
-  <header>
-<h1>Hello,<br>
-I am Barbara Malta</h1>
-  </header>
+    <nav class="links">
+      <ul>
+        <li>
+          <a href="#header"> <h2>BM</h2> </a>
+        </li>
+        <li>
+          <a href="#about"> about </a>
+        </li>
+        <li>
+          <a href="#projects"> projects </a>
+        </li>
+        <li>
+          <a href="#contact"> contact </a>
+        </li>
+      </ul>
+    </nav>
 
-  <section class="about">
-    <h2>About</h2>
+    <nav class="icons">
+      <ul>
+        <li>
+           <a href="mailto:barbara@mb-malta.co.uk"><i class="fa-solid fa-envelope"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/Star-Squid"><i class="fa-brands fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://stackoverflow.com/users/17976833/star-squid"><i class="fa-brands fa-stack-overflow"></i></a>
+        </li>
+        <li>
+          <a href="https://uk.linkedin.com/barbara-malta"><i class="fa-brands fa-linkedin"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="header">
+      <!-- <div id="translate"></div> -->
+      <div class="hello">
+        <div class="greeting reveal">
+      <h1>
+        Hello,
+        <br>
+      I am Barbara Malta
+    </h1>
+    </div>
+    <div class="description reveal">
+      full-stack developer in training
+    </div>
+    </div>
+    </section>
+
+  <section id="about">
+    <h2 class="reveal">About</h2>
+    <p class="reveal">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda dignissimos ipsam. Enim, maxime amet placeat libero veritatis quidem dolorum ad error nostrum, pariatur illum unde, saepe ex odit eaque?
+  </p>
+  
   </section>
-  <section class="work">
-    <h2>Favourite projects</h2>
+
+  <section id="projects">
+    <h2 class="reveal">Favourite projects</h2>
+    <p class="reveal">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda dignissimos ipsam. Enim, maxime amet placeat libero veritatis quidem dolorum ad error nostrum, pariatur illum unde, saepe ex odit eaque?
-    <h2>Small projects</h2>
+  </p>
+    <h2 class="reveal">Small projects</h2>
+    <p class="reveal">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda dignissimos ipsam. Enim, maxime amet placeat libero veritatis quidem dolorum ad error nostrum, pariatur illum unde, saepe ex odit eaque?
+  </p>
+  <h2 class="right-slide">Small projects</h2>
+  <p class="right-slide">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda dignissimos ipsam. Enim, maxime amet placeat libero veritatis quidem dolorum ad error nostrum, pariatur illum unde, saepe ex odit eaque?
+</p>
   </section>
   
-  <footer>
+  <footer id="contact">
     contact me
   </footer>
 
-</div>
+</section>
 </body>
 
 </html>
