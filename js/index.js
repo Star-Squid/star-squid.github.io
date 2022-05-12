@@ -63,3 +63,5 @@ const slideObserver = new IntersectionObserver(function
     })
 
     rightSlide.forEach(section => slideObserver.observe(section))
+
+
