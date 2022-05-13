@@ -20,7 +20,8 @@ html {
   --transparent: rgba(1, 1, 1, 0);
   --white: #ffffff;  
   --almostwhite: #CCCCCC;
-  --blue: #27C3F1;
+  --electricblue: #27C3F1;
+  --blue: #9DC3CE;
   --pink: #C12240;
   --steel: #1D3F55;
   /* --lightgrey: #C0C3D6; 
@@ -32,7 +33,7 @@ html {
 
   --black: #1C1618;
   --dark: #212121;
-  --halfdark: #212121CC;
+  --halfdark: #212121e1;
   --medium: #3E3E3E;
   --halfmedium: #3E3E3ECC;
 
@@ -54,15 +55,15 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: var(--dark);
-  
+
+    scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   width: 11px;
-}
-body {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
@@ -99,7 +100,7 @@ h3 {
   font-family: 'Unica One', cursive;
   color: var(--almostwhite);
   font-size: 3vmin;
-  padding: 5px;
+  padding: 0px;
   font-weight: 800;
   margin: 0px;
   /* text-shadow: -1px 0 var(--violet), 0 1px var(--violet), 1px 0 var(--violet), 0 -1px var(--violet), 5px 3px 4px var(--dark); */
@@ -159,14 +160,19 @@ h3 {
 }
 
 
-
 hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, var(--transparent), var(--white), var(--transparent));
+  border-style: dashed none none;
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
+
+/* hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--transparent), var(--almostwhite), var(--transparent));
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+} */
 
 .links{
   position: fixed;
@@ -347,6 +353,56 @@ section{
 
 }
 
+.face{
+  width:100%;
+}
+
+#projects > h2 {
+  text-align: center;
+}
+.ordinal{
+  font-family: 'Unica One', cursive;
+  color: var(--almostwhite);
+  font-size: 3vmin;
+  padding: 0px;
+  font-weight: 800;
+  margin: 0px;
+}
+
+.languages{
+  color: var(--almostwhite);
+  font-weight: normal;
+  font-style: italic;
+}
+
+.about-project{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-project .contain-thumb{
+  aspect-ratio: 1;
+  width: 100%;
+overflow: hidden;
+position: relative;
+box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
+
+}
+
+/* .thumb{
+width: 100%;
+height: 100%;} */
+
+.flashcards-start{
+  background: url("../thumbs/flashcards-start.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
 
 
 footer{
@@ -460,7 +516,7 @@ input[type="checkbox"]:checked {
 .checkbox-area{
   display: flex;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content:first baseline;
 }
 
 .reveal{
@@ -593,7 +649,8 @@ menu {
   left: 0px;
   width: 100%;
   height: 100%;
-  border-radius: 1px;
+  border-radius: 5ccccccjehvtrbfnnetihcbvdnvicgetbrdcvkfgfijeu
+  px;
   background: var(--halfdark);
   will-change: transform;
   transform: translateY(2px);
@@ -608,7 +665,7 @@ menu {
   left: 0px;
   width: 100%;
   height: 100%;
-  border-radius: 1px;
+  border-radius: 5px;
   background: linear-gradient(
     to left,
     var(--dark) 0%,
@@ -621,7 +678,7 @@ menu {
   display: block;
   position: relative;
   padding: 12px 42px;
-  border-radius: 1px;
+  border-radius: 5px;
   border: solid 2px var(--almostwhite);
 
   font-size: 1.5rem;
@@ -677,7 +734,7 @@ menu {
 
 
 a{
-  color:var(--almostwhite);
+  color:var(--blue);
   font-weight: bolder;
   transition: all .2s ease-in-out;
 }
@@ -685,12 +742,12 @@ a:hover,
 a:active,
 a:focus
 {
-  color: var(--blue);
+  color: var(--almostwhite);
   /* text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach), 0 -1px var(--peach), 5px 3px 4px var(--dark); */
 }
 
 
-.btn {
+/* .btn {
 
   cursor: pointer;
   font-size: 2rem;
@@ -703,8 +760,7 @@ a:focus
 .btn:focus{
   color: var(--peach);
   text-shadow: -1px 0 var(--peach), 0 1px var(--peach), 1px 0 var(--peach), 0 -1px var(--peach), 5px 3px 4px var(--dark);
-  /* background-color: rgb(153, 83, 188) */
-}
+} */
 
 /* 
 
@@ -730,16 +786,17 @@ dialog {
 } */
 ​
 .egg{
-  display: grid;
-  place-content: center;
+  /* display: grid;
+  place-content: center; */
 
   /* size: 1rem; */
   padding: 0.5rem;
-  background-color: var(--dark);
+  background: #111011;
 }
 
 .egg a{
   padding-left: 50%;
+  color: var(--almostwhite);
 }
 
 .cards{
@@ -758,12 +815,68 @@ dialog {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.1rem;
   /* border: solid 1px var(--white); */
   /* padding: 1rem; */
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
   /* border-radius: 0.5rem; */
-  width: 40rem;
+  width: 25rem;}
+
+  .card > p {
+      margin-block-start: 0px;
+      margin-block-end: 0px;      
+  
+  }
+
+  .card > .languages {
+margin-bottom: 1rem;
+}
+
+  .contain-thumb{
+    width: 25rem;
+    height: 17rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.thumb{
+  width: 100%;
+  height: 100%;}
+
+  .flex-cv{
+    background: url("../thumbs/flex-cv.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+  }
+
+  .high-five{
+    background: url("../thumbs/high-five.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+  }
+
+  .hookd{
+    background: url("../thumbs/hookd.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+  }
+
+.family{
+  background: url("../thumbs/family.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
+.thumb:hover {
+  transform: scale(1.2);
 }
 
 /* .project-card-component {
@@ -776,35 +889,45 @@ dialog {
   width: 38vmin;
 } */
 
-.card > a > img {
+/* .card > a > img {
   aspect-ratio: 3/2;
   object-fit: cover;
   width: 100%;
-}
+} */
 
 /* .project-card-component > img:first-child {
   border-radius: 0.5rem 0.5rem 0 0;
 } */
 
-.card > img:last-child {
+/* .card > img:last-child {
   /* border-radius: 0 0 0.5rem 0.5rem; */
-  margin-top: auto;
-}
+  /* margin-top: auto;
+} */
 
 .card > :not(a) {
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.card > :not(a):first-child {
+.card > :nth-child(2) {
   margin-top: 1rem;
+}
+
+/* .card > :not(a):nth-child(3) {
+  margin-top: 0.1rem;
+} */
+
+.card > :last-child {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: right;
 }
 
 /* Enhanced `:not()` accepts a selector list,
 but as a fallback you can chain `:not()` instead */
-.card > :last-of-type:not(img, h2, h3, h4) {
+/* .card > :last-of-type:not(img, h2, h3, h4) {
   margin-bottom: 1rem;
-}
+} */
 
 /* .project-card-component > :not(h2, h3, h4) {
   font-size: 0.9rem;
@@ -812,4 +935,33 @@ but as a fallback you can chain `:not()` instead */
 
 .card > a {
   align-self: start;
+}
+
+/*  */
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 5%;
+	left: 0;
+	right: 0;
+	margin: 0 auto 0 auto;
+	background: white;
+	max-width: 500px;
+	padding: 40px;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	z-index: 2;
+}
+
+.modal-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+	background: rgba(0,0,0,.4);
 }

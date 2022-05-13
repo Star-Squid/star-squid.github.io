@@ -23,21 +23,24 @@
     <title>Barbara's Portfolio</title>
 
     <!-- favicons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" sizes="any">
 
     <!-- styles, fonts -->
     <link rel="preload" href="img/tape.jpg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap" rel="stylesheet">
+    <link href="styles/modals.css" rel="stylesheet">
+
     <link href="styles/dark.css" rel="stylesheet">
+  
 
     <!-- scripts -->
    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
-   
+   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
      <!-- <script src="js/jquery.flip.min.js" charset="utf-8" defer></script>
     <script src="js/swiped-events.js" charset="utf-8" defer></script>-->
      <script src="https://kit.fontawesome.com/2a2cd0823a.js" crossorigin="anonymous"></script>
@@ -99,14 +102,18 @@
     </section>
 
   <section id="about">
-    <h2 class="reveal">About</h2>
-    <p class="reveal">
+    <div class="about-project">
+      <img class="face reveal" src="img/face.png" alt="self-portrait">
+      <div>
+            <h2 class="right-slide">About</h2>
+
+    <p class="right-slide">
       I'm a junior front-end developer, and began teaching myself to code in 2021, (not counting dozens of personal pages and all the templates I made for my blog.pl in 2000-2003)/ (the few dozen of personal pages and templates for blog.pl I coded in Notepad in 2000-2003 don't count, but explain my affinity for retro-style design/explain my excitement about the popularity/comeback of retro/old-style designs) everything that I learn inspires me to start a project. Not all ideas can be turned into reality, but here are the ones that made it. [view all as a list] I've recently
       finished all the online Web Development Bootcamps I signed up for last year, and I feel ready for a full-time role where I can help a company achieve their
       goals. I am making efforts to get into/learn/ back-end, because it seems to me
       that this is where "serious" coding happens, but whenever I see a well-designed website, I will spend hours checking what makes it work.
-  </p>
-  
+  </p></div>
+  </div>
   </section>
 <!-- Description for each project
       Why is this project important to you? What inspired it? Why did you choose to build
@@ -123,23 +130,45 @@
       • What did you learn from doing this project? How has it affected the work you’ve done
       since then? -->
   <section id="projects">
+    <hr>
+
     <h2 class="reveal">Favourite projects</h2>
 
-    <p class="reveal"><a href="">[link]</a> <a href="">[code]</a></p>
+    <div id="two" class="button">Revealing</div>
+
+    <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
     <h3 class="reveal">Flipping Flashcards</h3>
-    <p class="reveal"><a href="">javascript | html | css</a></p>
+    <p class="reveal languages">javascript &middot; html &middot; css</p>
+
+    <div class="about-project">
     <p class="reveal">
       Inspired by an article I read, which recommended flashcards as a great way to learn
 annything/as a brilliant tool to learn/for learning anything under the sun singing the praises of flashcards as the best solution for learning anything. This being the 21st century, I was not about to make paper flashcards, but I did have a vision of a card flipping.
   </p>
 
+  <a href="https://star-squid.github.io/flipping-flashcards">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flashcards-start">
+      </div>
+    </div>
+  </a>
+
+  <a href="https://star-squid.github.io/flex-cv">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flex-cv">
+      </div>
+    </div>
+  </a>
+
   <p class="reveal">
-    01. The interface
+    <b class="ordinal">01.</b><br>
+    The interface
 Arguably the most fun part. I decided to go a bit crazy with retro cyberpunk style and loved it. I chose jQuery flip as a mechanism for the most importannt part.
   </p>
 
   <p class="reveal">
-    02. Source for questions and answers
+    <b class="ordinal">02.</b><br>
+    Source for questions and answers
 The first phase was researching different methods of extracting data from spreadsheets into Javascript.
 It seemed nnatural to use either local Excel files or google Sheets for this purpose. I tesed both
 and in the process learnt to update Google Sheets remotely through node, but I wasn't
@@ -148,14 +177,32 @@ What is more, I realized that spreadsheets are neither a natural/convenient not 
 In the end, I decided to hard-code the content into index.js for now.
 I wanted to use a human-readable format for any new card sets, but one that is
 simple to turn into JavaScript objects for use with the code.
-| action screenshot |
-| screenshot of code|
+&middot; action screenshot &middot;
+&middot; screenshot of code&middot;
   </p>
 
-  <p class="reveal">03. Viewing/Showing/displaying questions and answers</p>
+
+  <a href="https://star-squid.github.io/flipping-flashcards">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flashcards-start">
+      </div>
+    </div>
+  </a>
+
+  <a href="https://star-squid.github.io/flex-cv">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flex-cv">
+      </div>
+    </div>
+  </a>
 
   <p class="reveal">
-    04. Individual flashcard ratings
+    <b class="ordinal">03.</b><br>
+    Viewing/Showing/displaying questions and answers</p>
+
+  <p class="reveal">
+    <b class="ordinal">04.</b><br>
+    Individual flashcard ratings
 A crucial part of the project was allowinng for a way for the user to indicate if they want to
 see the same card again. I decided on rating buttonns
 Each card is assigned a rating of 6 when created, and a series of array actions
@@ -166,63 +213,89 @@ assigned to each card could be lowered to shorten the learning session, or incre
 even cards rated V by the user will be shown 4 or more times
   </p>
 
+
+  <a href="https://star-squid.github.io/flipping-flashcards">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flashcards-start">
+      </div>
+    </div>
+  </a>
+
+  <a href="https://star-squid.github.io/flex-cv">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flex-cv">
+      </div>
+    </div>
+  </a>
+
+
   <p class="reveal">
-    05. Responsive design
+    <b class="ordinal">05.</b><br>
+    Responsive design
     This was one of the projects that looked ok when first viewed on mobile, but I decided to
     abandon the classic landscape rectangular shape on smaller screens. The new flashcard
     shape is 80% of the viewport width, but no more than 1:1 aspect ratio
   </p>
 
   <p class="reveal">
-    06. what I learned 
-I am still working on this project. I'd really like o find asolution for importing outside data to use with this interface. Because I changed the direction of the project more than once, I learned to appreciate git for making it possible to work on different branches without feelinng like i needed to give up one to try another. One day I might even start using flashcards to study./ /Most importantly, I learnt that I donn't really like studying with flashcards/studying with flashcards is nnnot my thinng
+    <b class="ordinal">06.</b><br>
+    what I learned 
+I am still working on this project. I'd really like o find asolution for importing outside data to use with this interface. Because I changed the direction of the project more than once, I learned to appreciate git for making it possible to work on different branches without feeling like i needed to give up one to try another. One day I might even start using flashcards to study./ /Most importantly, I learnt that I donn't really like studying with flashcards/studying with flashcards is nnnot my thinng
   </p>
 
+
+  <a href="https://star-squid.github.io/flipping-flashcards">
+    <div class="contain-thumb right-slide">
+      <div class="thumb flashcards-start">
+      </div>
+    </div>
+  </a>
+
+</div>
   <hr>
 
-  <p class="reveal"><a href="">[link]</a> <a href="">[code]</a></p>
+  <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
   <h3 class="reveal">Star Squid Studio</h3>
-  <p class="reveal"><a href="">javascript | html | css</a></p>
+  <p class="reveal languages">javascript &middot; html &middot; css</p>
   <p class="reveal">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iure quasi dolore blanditiis, exercitationem suscipit, autem quam voluptatem labore consequuntur sapiente ab ut beatae enim praesentium corrupti atque at nulla.</p>
 
   <hr>
 
-  <p class="reveal"><a href="">[link]</a> <a href="">[code]</a></p>
+  <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
   <h3 class="reveal">Workday Clock</h3>
-  <p class="reveal"><a href="">javascript | html | css</a></p>
+  <p class="reveal languages">javascript &middot; html &middot; css</p>
   <p class="reveal">
     I've never liked using round face analog clocks. The two hands (why should the long hand indicate the short time period and not the other way around?), the reversing direction (left to right when on top, but right to left on the bottom), my general desire to be unique and insufferable/an insufferable contrarian... However, watching X's video ... changed my mind to an extent and crystallized an idea: yes to a visual representation of the length of each hour and the whole day, yes toa way to easily visualize time remaining to an appointment, but only one direction of travel, no time change/turns off during off duty hours</p>
 
 
     <hr>
 
-    <p class="reveal"><a href="">[link]</a> <a href="">[code]</a></p>
+    <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
     <h3 class="reveal">Wildflower Memory</h3>
-    <p class="reveal"><a href="">javascript | html | css</a></p>
+    <p class="reveal languages">javascript &middot; html &middot; css</p>
+
     <p class="reveal">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorem consectetur enim, eos, at recusandae tempore sapiente, optio ea soluta voluptatum. Et consequatur voluptates modi? Nulla dolores odio et quia!</p>
 
-
   <hr>
-  
 
-  
   <h2 class="right-slide">Small projects</h2>
   <p class="reveal">
 One-page, one-concept, quick projects - that I still think are cool enough to share.</p>
 <p>flashcards, star squid, memory, clock</p>
 
 <div class="cards">
- 
+<!--  
   <div class="card reveal">
     <a href="https://star-squid.github.io/flex-cv">
     <img src='thumbs/flex-cv.png' alt=''>
     </a>
     <h3>Flex CV</h3>
+    <p class="languages">html &middot; css</p>
     <p>So many inflexible jobs can fit into flex containers</p>
     <p>
-    <a href="https://star-squid.github.io/flex-cv">[link]</a> <a href="https://github.com/Star-Squid/flex-cv">[code]</a>
+    <a href="https://star-squid.github.io/flex-cv">link</a> &middot; <a href="https://github.com/Star-Squid/flex-cv">code</a>
     </p>
   </div>
 
@@ -231,9 +304,11 @@ One-page, one-concept, quick projects - that I still think are cool enough to sh
     <img src='thumbs/high-five.png' alt=''>
     </a>
     <h3>High Five!</h3>
+    <p class="languages">javascript &middot; html &middot; css</p>
+
     <p>A game of treats and tricks with my cat</p>
     <p>
-    <a href="https://star-squid.github.io/high-five">[link]</a> <a href="https://github.com/Star-Squid/high-five">[code]</a>
+    <a href="https://star-squid.github.io/high-five">link</a> &middot; <a href="https://github.com/Star-Squid/high-five">code</a>
     </p>
   </div>
 
@@ -242,56 +317,81 @@ One-page, one-concept, quick projects - that I still think are cool enough to sh
     <img src='thumbs/hookd.png' alt=''>
     </a>
     <h3>Hookd</h3>
+        <p class="languages">javascript &middot; html &middot; css</p>
+
     <p>While playing with Bootstrap, I may have invented the new hit app</p>
     <p>
-    <a href="https://star-squid.github.io/hookd">[link]</a> <a href="https://github.com/Star-Squid/hookd">[code]</a>
+    <a href="https://star-squid.github.io/hookd">link</a> &middot; <a href="https://github.com/Star-Squid/hookd">code</a>
+    </p>
+  </div> -->
+
+  <!-- ----------------- -->
+  <div class="card reveal">
+    <a href="https://star-squid.github.io/flex-cv">
+      <div class="contain-thumb">
+        <div class="thumb flex-cv">
+        </div>
+        </div>
+          </a>
+    <h3>Flex CV</h3>
+    <div class="languages">html &middot; css</div>
+    <p>So many inflexible jobs can fit into flex containers</p>
+    <p>
+    <a href="https://star-squid.github.io/flex-cv">link</a> &middot; <a href="https://github.com/Star-Squid/flex-cv">code</a>
+    </p>
+  </div>
+
+  <div class="card reveal">
+    <a href="https://star-squid.github.io/high-five">
+      <div class="contain-thumb">
+        <div class="thumb high-five">
+        </div>
+        </div>
+          </a>
+    <h3>High Five!</h3>
+    <p class="languages">javascript &middot; html &middot; css</p>
+
+    <p>A game of treats and tricks with my cat</p>
+    <p>
+    <a href="https://star-squid.github.io/high-five">link</a> &middot; <a href="https://github.com/Star-Squid/high-five">code</a>
+    </p>
+  </div>
+
+  <div class="card reveal">
+    <a href="https://star-squid.github.io/hookd">
+      <div class="contain-thumb">
+        <div class="thumb hookd">
+        </div>
+        </div>    </a>
+    <h3>Hookd</h3>
+        <p class="languages">javascript &middot; html &middot; css</p>
+
+    <p>While playing with Bootstrap, I may have invented the new hit app</p>
+    <p>
+    <a href="https://star-squid.github.io/hookd">link</a> &middot; <a href="https://github.com/Star-Squid/hookd">code</a>
     </p>
   </div>
 
   <div class="card reveal">
     <a href="https://mb-malta.co.uk">
-      <img src='thumbs/family.png' alt=''>
+    <div class="contain-thumb">
+    <div class="thumb family">
+    </div>
+    </div>
     </a>
+
     <h3>Family Welcome Page</h3>
+    <p class="languages">html &middot; css</p>
+
     <p>Just an .svg overlaid on a .png to combine resizability and clickability</p>
     <p>
-    <a href="https://mb-malta.co.uk">[link]</a> <a href="https://github.com/Landsil/landsil.github.io">[code]</a>
+    <a href="https://mb-malta.co.uk">
+    link</a> 
+    <a href="https://github.com/Landsil/landsil.github.io">code</a>
     </p>
   </div>
 
-  
-  <!-- <div class="project-card-component">
-    <img src='https://images.unsplash.com/photo-1607274227313-08146c819e6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-    <h3>Card Headline 1</h3>
-    <p>Chocolate cake macaroon tootsie roll pastry gummies.</p>
-    <p>Apple pie jujubes cheesecake ice cream gummies sweet roll lollipop.</p>
-    <a href="https://moderncss.dev">Visit ModernCSS.dev</a>
-  </div>
-
-  <div class="project-card-component">
-    <img src='https://images.unsplash.com/photo-1607274227313-08146c819e6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-    <h3>Card Headline 1</h3>
-    <p>Chocolate cake macaroon tootsie roll pastry gummies.</p>
-    <p>Apple pie jujubes cheesecake ice cream gummies sweet roll lollipop.</p>
-    <a href="https://moderncss.dev">Visit ModernCSS.dev</a>
-  </div>
-
-  <div class="project-card-component">
-    <img src='https://images.unsplash.com/photo-1607274227313-08146c819e6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-    <h3>Card Headline 1</h3>
-    <p>Chocolate cake macaroon tootsie roll pastry gummies.</p>
-    <p>Apple pie jujubes cheesecake ice cream gummies sweet roll lollipop.</p>
-    <a href="https://moderncss.dev">Visit ModernCSS.dev</a>
-  </div>
-
-  <div class="project-card-component">
-    <img src='https://images.unsplash.com/photo-1607274227313-08146c819e6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-    <h3>Card Headline 1</h3>
-    <p>Chocolate cake macaroon tootsie roll pastry gummies.</p>
-    <p>Apple pie jujubes cheesecake ice cream gummies sweet roll lollipop.</p>
-    <a href="https://moderncss.dev">Visit ModernCSS.dev</a>
-  </div> -->
-</d>
+</div>
 
   </section>
   
@@ -385,8 +485,32 @@ One-page, one-concept, quick projects - that I still think are cool enough to sh
   </footer>
 
     <div class="egg">
-    <a href="img/egg.gif"><i class="fa-solid fa-egg" title="closing thoughts"></i></a></div>
+    <a href="img/egg.gif"><i class="fa-solid fa-egg reveal" title="closing thoughts"></i></a></div>
 
+<!-- -->
+
+<div class="container">
+	<h1>Keyboard trapping for enhanced accessibility</h1>
+	<p>Keyboard trapping is normally evil. But, you can use this "anti-pattern" in a good way to enhance the accessibility your application for your users. Just wield the power responsibly!</p>
+	<p>Clicking the button below will launch a modal window, and apply focus to the first focussable element inside it. JavaScript will not allow the focus to move outside the modal while the modal is active. You can think of the modal as a <em>mini page-within-a-page</em>.</p>
+	<p>You can also click any of the following links to open the modal. Focus should be returned to the link you click when the modal is closed:</p>
+	<ul>
+		<li><a href="#" class="modal-toggle">Launch the modal</a></li>
+		<li><a href="#" class="modal-toggle">Fire the pop-up window</a></li>
+		<li><a href="#" class="modal-toggle">Display the window thingy</a></li>
+	</ul>
+	<button class="modal-toggle">Launch modal</button>
+</div>
+
+<div class="modal modal-closed" aria-role="dialog">
+  <i class="fa-solid fa-square-xmark modal-close"></i>
+  <button class="modal-close">ok</button>
+  <button class="modal-close">✖</button>
+  <button class="modal-close button-cancel">Cancel</button>
+</div>
+<div class="modal-overlay"></div>
+
+<!--  -->
 </body>
 
 </html>
