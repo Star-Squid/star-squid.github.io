@@ -1,32 +1,11 @@
-// var observer = new IntersectionObserver(function(entries) {
-// 	// isIntersecting is true when element and viewport are overlapping
-// 	// isIntersecting is false when element and viewport don't overlap
-// 	if(entries[0].isIntersecting === true)
-// 		console.log('Element has just become visible in screen');
-// }, { threshold: [0] });
-
-// observer.observe(document.querySelector("#my-element"));
+// const about = document.querySelector("#about");
+// const projects = document.querySelector("#projects");
+// const contact = document.querySelector("#contact");
 
 
-// const reveal = document.querySelectorAll(".reveal")
-
-// const callback = (entries, observer) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add("activate")
-//     }
-//   })
-// }
-// const options = {}
-
-// const myObserver = new IntersectionObserver(callback, options)
-// myObserver.observe(reveal)
-
-const about = document.querySelector("#about");
-const projects = document.querySelector("#projects");
-const contact = document.querySelector("#contact");
+//  SCROLL ANIMATIONS
 const reveal = document.querySelectorAll(".reveal");
-const rightSlide = document.querySelectorAll(".right-slide")
+const rightSlide = document.querySelectorAll(".right-slide");
 
 const options = {
     root: null, //viewport
@@ -64,30 +43,31 @@ const slideObserver = new IntersectionObserver(function
 
     rightSlide.forEach(section => slideObserver.observe(section))
 
-// 
 
-// Adapted from https://github.com/udacity/ud891/tree/gh-pages/lesson2-focus/07-modals-and-keyboard-traps/solution
+// MODALS AND FOCUS
 
-// Will hold previously focused element
 let focusedElementBeforeModal;
+let imgThatWasClicked;
 
-// Find the modal and its overlay
 const modal = document.querySelector('.modal');
 const modalOverlay = document.querySelector('.modal-overlay');
+let modalImage = document.querySelector('#modal-img');
 
-// Attach listeners to all the modal toggles
 const modalToggles = document.querySelectorAll('.modal-toggle');
 
 for(let i = 0; i < modalToggles.length; i++) {
 	modalToggles[i].addEventListener('click', openModal);
-}
+};
 
-/**
- * Opens the modal and traps focus.
- */
+
 function openModal() {
+    
   // Save current focus
   focusedElementBeforeModal = document.activeElement;
+
+  //Save current image clicked, display it in the modal
+  imgThatWasClicked = this.children[0].children[0].classList[1];
+  modalImage.src = 'thumbs/' + imgThatWasClicked + '.png';
 
   // Listen for and trap the keyboard
   modal.addEventListener('keydown', trapTabKey);
@@ -98,7 +78,6 @@ function openModal() {
   // Modal close buttons
   const closeButtons = modal.querySelectorAll('.modal-close');
 	
-	// Attach listeners to all the close modal buttons
 	for(let i = 0; i < closeButtons.length; i++) {
 		closeButtons[i].addEventListener('click', closeModal);
 	}
@@ -117,7 +96,7 @@ function openModal() {
   modal.style.display = 'block';
   modalOverlay.style.display = 'block';
 	
-	// This just allows for the animation, not required.
+	// animation
 	setTimeout(function() {
 		modal.classList.remove('modal-closed');
 	}, 10);
