@@ -184,7 +184,7 @@ hr {
 }
 
 .links li {
-  padding: 2rem;
+  padding: 32px;
   display: list-item;
   text-align: center;
 }
@@ -207,7 +207,7 @@ hr {
 }
 
 .icons li {
-  padding: 1rem;
+  padding: 16px;
   display: list-item;
   text-align: center;
 }
@@ -305,11 +305,11 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  gap: 4rem;
+  gap: 35px;
   align-items: center;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 60rem) {
   .about-project {
     display: grid;
     grid-template-columns: 1fr;
@@ -332,12 +332,14 @@ section {
   transition: all 1s;
 }
 
-
+.small-description{
+  padding: 2rem 0;
+}
 
 .cards {
   display: flex;
   flex-flow: row wrap;
-  gap: 4rem;
+  gap: 60px;
   justify-content: center;
   align-items: stretch;
 }
@@ -348,7 +350,7 @@ section {
   justify-content: space-between;
   gap: 0.1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
-  width: 25rem;
+  width: 22rem;
 }
 
 .card > p {
@@ -361,8 +363,8 @@ section {
 }
 
 .contain-thumb {
-  width: 25rem;
-  height: 17rem;
+  width: 22rem;
+  height: 12rem;
   overflow: hidden;
   position: relative;
 }
@@ -519,14 +521,14 @@ input[type="checkbox"]:checked {
 
 .button-area {
   display: flex;
-  gap: 1rem;
+  gap: 20px;
   justify-content: space-between;
   padding-top: 1rem;
 }
 
 .checkbox-area {
   display: flex;
-  gap: 1rem;
+  gap: 20px;
   justify-content: first baseline;
 }
 
@@ -544,7 +546,7 @@ input[type="checkbox"]:checked {
 
 .right-slide {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 
 .right-slide-activate {
@@ -649,7 +651,6 @@ input[type="checkbox"]:checked {
   background: var(--steel);
 }
 
-
 ​ .egg {
   padding: 0.5rem;
   background: #111011;
@@ -688,8 +689,8 @@ input[type="checkbox"]:checked {
 	margin: 0 auto 0 auto;
 	background: var(--medium);
   width:80%;
-	padding: 1rem;
-	border-radius: 3px;
+	padding: 16px;
+	border-radius: 5px;
 	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
 	z-index: 3;
 
@@ -697,10 +698,10 @@ input[type="checkbox"]:checked {
   animation: createBox .5s;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 40rem) {
   .modal {
     width: 95%;
-    padding: 0.3rem;
+    padding: 5px;
   }
 }
 

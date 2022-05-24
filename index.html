@@ -1,9 +1,9 @@
 <!--
- ____ ____ ____ ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ ____ 
+ ____ ____ ____ ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ ____
 ||B |||a |||r |||b |||a |||r |||a |||' |||s |||       |||P |||o |||r |||t |||f |||o |||l |||i |||o ||
 ||__|||__|||__|||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__|||__||
 |/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
-                                                     
+
 :: created by Barbara Malta ::
 :: thank you for visiting! ::
 :: barbara@mb-malta.co.uk::
@@ -34,12 +34,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap" rel="stylesheet">
     <link href="styles/dark.css" rel="stylesheet">
-  
+
 
     <!-- scripts -->
    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
      <script src="https://kit.fontawesome.com/2a2cd0823a.js" crossorigin="anonymous"></script>
-     <script src="js/index.js" charset="utf-8" defer></script> 
+     <script src="js/index.js" charset="utf-8" defer></script>
   </head>
 
 <body>
@@ -60,7 +60,7 @@
         </li>
       </ul>
     </nav>
-  
+
     <nav class="icons">
       <ul>
         <li>
@@ -85,7 +85,7 @@
         </li>
       </ul>
     </nav>
-  
+
     <section id="header">
       <div class="hello">
         <div class="greeting reveal">
@@ -98,13 +98,13 @@
         <div class="description reveal">full-stack developer in training</div>
       </div>
     </section>
-  
+
     <section id="about">
       <div class="about-project">
         <img class="face reveal" src="img/face.png" alt="self-portrait" />
         <div>
           <h2 class="right-slide">About</h2>
-  
+
           <p class="right-slide">
             I'm a junior front-end developer, and began teaching myself to code in
             2021, (not counting dozens of personal pages and all the templates I
@@ -140,13 +140,13 @@
         since then? -->
     <section id="projects">
       <hr />
-  
+
       <h2 class="reveal">Favourite projects</h2>
-  
+
       <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
       <h3 class="reveal">Flipping Flashcards</h3>
       <p class="reveal languages">javascript &middot; html &middot; css</p>
-  
+
       <div class="about-project">
         <p class="reveal">
           Inspired by an article I read, which recommended flashcards as a great
@@ -156,26 +156,37 @@
           about to make paper flashcards, but I did have a vision of a card
           flipping.
         </p>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flashcards-start"></div>
           </div>
         </a>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flex-cv"></div>
           </div>
         </a>
-  
+
         <p class="reveal">
           <b class="ordinal">01.</b><br />
           The interface Arguably the most fun part. I decided to go a bit crazy
           with retro cyberpunk style and loved it. I chose jQuery flip as a
           mechanism for the most importannt part.
+
+At no point did I check any existing flashcard apps. It took no more than a millisecond to go from “I’d like to try an app like this” to “I think I can make something like this”.
+
+The main features I envisioned for this project were :
+The card should seem to physically flip
+The user should be able to upload their own content
+
+Both of them generate issues. The jQuery Flip animation makes the content inaccessible to screen readers, which means it should be replaced with a more rigid solution, where the flipping effect would be only decorative.
+
+In order to learn how to make uploading content possible, I went through a process of learning and rejecting different solutions. Initially I thought using a spreadsheet would be the best solution, which led me to learn how to use the Google Sheets API, followed by Google Sheets Reader https://github.com/bpk68/g-sheets-api#readme, veering to SheetsJS https://www.npmjs.com/package/xlsx to try local spreadsheets, before finally settling for csv as the simplest, most elegant solution.
+
         </p>
-  
+
         <p class="reveal">
           <b class="ordinal">02.</b><br />
           Source for questions and answers The first phase was researching
@@ -189,25 +200,26 @@
           a human-readable format for any new card sets, but one that is simple to
           turn into JavaScript objects for use with the code. &middot; action
           screenshot &middot; &middot; screenshot of code&middot;
+
         </p>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flashcards-start"></div>
           </div>
         </a>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flex-cv"></div>
           </div>
         </a>
-  
+
         <p class="reveal">
           <b class="ordinal">03.</b><br />
           Viewing/Showing/displaying questions and answers
         </p>
-  
+
         <p class="reveal">
           <b class="ordinal">04.</b><br />
           Individual flashcard ratings A crucial part of the project was allowinng
@@ -220,20 +232,42 @@
           the total nnumber of rating points assigned to each card could be
           lowered to shorten the learning session, or increased so that even cards
           rated V by the user will be shown 4 or more times
+
+          How the code works. (To see it in action on the website, download this example .csv file  xor use one of the three encoded flashcard sets)
+In a scenario where the user uploads their own content, first we use ... To parse the input.
+It gets split into questions and answers using ..., Then loaded into the factory function x, which turns them into flashcards objects and assigns each a start rating of 6.
+
+Next, x creates an array of all the objects, copying each object into it as many times as its current rating shows. This function will run every time a new card is needed so the array gets refreshed when ratings change. The array then gets randomized.
+
+Nextcard shows the first question of the array in the content of the flashcard. Clicking the card reveals the answer and three clickable stars which allow the user to indicate how well they knew the answer. Clicking the left star (.bad) runs nextcard without changing the currentCard's rating in currentArray, while .medium removes rating 1 point, and .good removes 2.
+
+If the user rates their answer as .good every time, each question gets shown 3 times. When every card in currentArray reaches a rating of 0, tempArray will be empty when nextCard runs, and a final message gets displayed.
+
+Redesign
+
+I also realized i should've brought in a test user at an earlier stage, possibly even when designing. His feedback, combined with x's article on design heuristics, led me to implement the following changes from v1.0 to 1.1:
+- welcome page with a prominent call to action
+- automatically open the choices dialog on load
+- more muted default colour palette, with the option to choose neon colours afterwards
+- integrate the rating stars into the back of the flashcard
+- include information for the user about their progress and current card and set rating
+- introduce keyboard shortcuts
+- remove detailed user instructions in a dialog, opting instead to make the interface self-explanatory
+
         </p>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flashcards-start"></div>
           </div>
         </a>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flex-cv"></div>
           </div>
         </a>
-  
+
         <p class="reveal">
           <b class="ordinal">05.</b><br />
           Responsive design This was one of the projects that looked ok when first
@@ -241,7 +275,7 @@
           rectangular shape on smaller screens. The new flashcard shape is 80% of
           the viewport width, but no more than 1:1 aspect ratio
         </p>
-  
+
         <p class="reveal">
           <b class="ordinal">06.</b><br />
           what I learned I am still working on this project. I'd really like o
@@ -253,7 +287,7 @@
           that I donn't really like studying with flashcards/studying with
           flashcards is nnnot my thinng
         </p>
-  
+
         <a class="modal-toggle">
           <div class="contain-thumb right-slide">
             <div class="thumb flashcards-start"></div>
@@ -261,19 +295,22 @@
         </a>
       </div>
       <hr />
-  
+
       <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
       <h3 class="reveal">Star Squid Studio</h3>
       <p class="reveal languages">javascript &middot; html &middot; css</p>
       <p class="reveal">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iure quasi
-        dolore blanditiis, exercitationem suscipit, autem quam voluptatem labore
-        consequuntur sapiente ab ut beatae enim praesentium corrupti atque at
-        nulla.
+        The purpose of this website is to show off some artwork.
+
+        The interesting thing about it is that although it has used the same javascript-based modals system, it had several design iterations throughout its lifecycle.
+
+        The interesting thing about it is that although it's gone through several design iterations throughout its lifecycle, it has retained the same w3schools-based modals system.
+
+        lesson: I realised that even though simple annd reusable is good, it is also important for code to be readable and maintainable.
       </p>
-  
+
       <hr />
-  
+
       <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
       <h3 class="reveal">Workday Clock</h3>
       <p class="reveal languages">javascript &middot; html &middot; css</p>
@@ -287,28 +324,41 @@
         the length of each hour and the whole day, yes toa way to easily visualize
         time remaining to an appointment, but only one direction of travel, no
         time change/turns off during off duty hours
+
+
+Text about clock how it works, how you achieved shapes.
+The resulting interface features two separate domes, one representing the 9 working hours between 9 and 18, and the other ones minutes of each hour. In order to achieve the rainbow shape of the clock faces, I overlaid a conical gradient with hours on a circular gradient that forms the main shape, added a semi-opaque conical gradient to indicate the passage of time, and a final small circular  gradient forms/creates the bottom of the arch. The time-updating/showing layer is controlled by the summation updateTime(), which runs once per minute. The interval is easy to adjust, but this project does not need higher precision.(Omitted in the pizza colour scheme/theme for higher realism)  /Illustrate in perspective
+The appointment feature adds yet another gradient to the stack. TheFunction x converts hours todegree of dome and shades the area between start and end times on the clock. This solution allows for multiple appointments, although if their times overlap, they merge together. This is fine for my purpose, since the appointment feature is only there to help visualize the time remaining before it starts. Activating the dialog without choosing appointment times clears the layer
+A fun little extra feature is the additional graphic/colour themes for the clocks. The colours and backgrounds are encoded ascss variables/ in the css as variables, so switching themes is as easy as swapping different :roots
+I learnt about css layout, gradients, variables, using time in JavaScript, dialogs (this one uses jquery dialog, but today i prefer dialog or optimized for focusing modal solution
+User feedback was invaluable in improving the appointment feature. I added a clear all button, made both start and end time required fields, and restricted the hours to what is displayed on the clock / clear all should just fully transparent the appointment layer
+https://youtu.be/NeopkvAP-ag
+No analog clocks in my life and that makes him and me l lose track of time because there is no handy way of visualizing how much time is left until a certain moment or until the full hour// all my life I've been a disliker of analog clocks. Not a hater, my feelings are neutral enough to be comfortable using them and negative enough that i haven't owned one in over a decade/haven't had one in my space. It was a video by Technology Connections (where he compares the minute hand toa prices bar)that made me see the merits of them and crystallized an idea for how to improve them. Key features: shows two halves of an hour as equal,... BUT only shows the necessary hours - no need to be concerned about exact time after 18, until next morning's alarm/knowing the exact time between 18 and next morning's alarm is a source of nothing but stress/anxiety, but crucially, the time will be shown linearly. No silly business of the first 30 min going down and the second going up
+The clock represents the hour as a circle, but this one represents it as an arch
+Small arch is like a close-up, or a more detailed progress bar. I like that it is optimised perfectly to my needs, but should also be immediately understandable readable legible to someone else without extra explanations
+
       </p>
-  
+
       <hr />
-  
+
       <p class="reveal"><a href="">link</a> &middot; <a href="">code</a></p>
       <h3 class="reveal">Wildflower Memory</h3>
       <p class="reveal languages">javascript &middot; html &middot; css</p>
-  
+
       <p class="reveal">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorem
         consectetur enim, eos, at recusandae tempore sapiente, optio ea soluta
         voluptatum. Et consequatur voluptates modi? Nulla dolores odio et quia!
       </p>
-  
+
       <hr />
-  
+
       <h2 class="right-slide">Small projects</h2>
-      <p class="reveal">
+      <p class="reveal small-description">
         One-page, one-concept, quick projects - that I still think are cool enough
         to share.
       </p>
-  
+
       <div class="cards">
         <div class="card reveal">
           <a href="https://star-squid.github.io/flex-cv">
@@ -324,7 +374,7 @@
             <a href="https://github.com/Star-Squid/flex-cv">code</a>
           </p>
         </div>
-  
+
         <div class="card reveal">
           <a href="https://star-squid.github.io/high-five">
             <div class="contain-thumb">
@@ -333,14 +383,14 @@
           </a>
           <h3>High Five!</h3>
           <p class="languages">javascript &middot; html &middot; css</p>
-  
+
           <p>A game of treats and tricks with my cat</p>
           <p>
             <a href="https://star-squid.github.io/high-five">link</a> &middot;
             <a href="https://github.com/Star-Squid/high-five">code</a>
           </p>
         </div>
-  
+
         <div class="card reveal">
           <a href="https://star-squid.github.io/hookd">
             <div class="contain-thumb">
@@ -349,24 +399,24 @@
           </a>
           <h3>Hookd</h3>
           <p class="languages">javascript &middot; html &middot; css</p>
-  
+
           <p>While playing with Bootstrap, I may have invented the new hit app</p>
           <p>
             <a href="https://star-squid.github.io/hookd">link</a> &middot;
             <a href="https://github.com/Star-Squid/hookd">code</a>
           </p>
         </div>
-  
+
         <div class="card reveal">
           <a href="https://mb-malta.co.uk">
             <div class="contain-thumb">
               <div class="thumb family"></div>
             </div>
           </a>
-  
+
           <h3>Family Welcome Page</h3>
           <p class="languages">html &middot; css</p>
-  
+
           <p>
             Just an .svg overlaid on a .png to combine resizability and
             clickability
@@ -378,7 +428,7 @@
         </div>
       </div>
     </section>
-  
+
     <footer id="contact">
       <form
         class="contact-form reveal"
@@ -409,7 +459,7 @@
               required
             />
           </p>
-  
+
           <p>
             <label for="email">email</label>
             <br />
@@ -422,7 +472,7 @@
               required
             />
           </p>
-  
+
           <p>
             <label for="message">your message</label>
             <br />
@@ -436,7 +486,7 @@
               required
             ></textarea>
           </p>
-  
+
           <p class="checkbox-area">
             <input
               class="good-height"
@@ -448,14 +498,14 @@
             />
             <label for="human">&nbsp; I am a human, vegetable, or mineral</label>
           </p>
-  
+
           <p class="button-area right-slide">
             <button type="reset" class="pushable">
               <span role="presentation" class="shadow"></span>
               <span role="presentation" class="edge"></span>
               <span class="frontbtn"> Delete </span>
             </button>
-  
+
             <button type="submit" class="pushable primary">
               <span role="presentation" class="shadow"></span>
               <span role="presentation" class="edge"></span>
@@ -465,22 +515,22 @@
         </fieldset>
       </form>
     </footer>
-  
+
     <div class="egg">
       <a href="img/egg.gif">
         <i class="fa-solid fa-egg" title="closing thoughts"></i>
       </a>
     </div>
-  
+
     <div class="modal modal-closed" aria-role="dialog">
       <p>
         <button class="modal-close">✖</button>
       </p>
       <img id="modal-img" src="thumbs/clock.png" alt="website screenshot" />
     </div>
-  
+
     <div class="modal-overlay reveal"></div>
   </div>
-  
+
 </body>
 </html>
