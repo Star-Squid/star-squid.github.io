@@ -150,3 +150,28 @@ function closeModal() {
   // Set focus back to element that had it before the modal was opened
   focusedElementBeforeModal.focus();
 }
+
+//eye animation
+// const el = document.querySelector("#look");
+
+// el.addEventListener("mousemove", (e) => {
+//   el.style.setProperty('--x', -e.offsetX + "px");
+//   el.style.setProperty('--y', -e.offsetY + "px");
+// });
+
+var container = document.querySelector("#jamf-container");
+var mover = document.querySelector("#jamf-mover");
+
+container.addEventListener("mousemove", function(e) {
+  mover.style.backgroundPositionX = -e.offsetX + .0018 + "px";
+  mover.style.backgroundPositionY = -e.offsetY + .008 + "px";
+});
+
+container.addEventListener("mouseenter", function() {
+  
+  setTimeout(function() {
+    mover.classList.add("no-more-slidey");
+    container.removeEventListener("mouseenter");
+  }, 250);
+  
+});
