@@ -33,12 +33,6 @@ html {
   --thumbBG: #cccccc;
 }
 
-/* @media (max-width: 660px) {
-  :root {  
-  --regular: 3vmin;
-  }
-} */
-
 body {
   height: 100vh;
   width: 100vw;
@@ -89,7 +83,7 @@ h1 {
 
 h2 {
   font-family: "Unica One", cursive;
-  font-size: calc(var(--regular) + 2vmin);
+  font-size: calc(var(--regular) + 3vmin);
   margin: 0px;
   padding: 0px;
   color: var(--almostwhite);
@@ -277,77 +271,94 @@ section {
 
 #about {
   position: relative;
-  display: block;
-  /* perspective: 10px; */
-
+  display: grid;
+  place-content: center;
 }
 
-/*  */
-
-.module-jamf {
-  width: 100%;
-  border: 1px solid white;                                                                                                                                                                                                               
+.flicker:hover {
+  color: var(--pink);
+  letter-spacing: 0.2rem;
+  animation: text-flicker 3s linear infinite;
+  cursor: auto;
 }
 
-.jamf-container {
-  display: block;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
 
-  background: url(../img/faces.png);
-  background-size: 120%;
-  background-repeat: no-repeat;
-}
+  2% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity: 0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  25% {
+    opacity: 0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  30% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
 
-.jamf-mover {
-  width: 100%;
-  height: 300px;
-  background: url(../img/eyes.png);
-  background-size: 120%;
-  background-repeat: no-repeat;
-  background-position: -10% 20%;
-  transform: scale(1);
-  transition: background-position 0.25s;
-  &.no-more-slidey {
-    transition: none;
+  70% {
+    opacity: 0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  72% {
+    opacity: 0.2;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  77% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
   }
 }
 
-/*  */
 .contain-portrait {
   width: 100%;
   position: relative;
   top: -40%;
   left: -4rem;
-
-  /* background-image: url(https://images.unsplash.com/photo-1499162526249-f5b8b9ba9923?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=865bf5c0b77ceb22e88de9fd41c5a671);
-  background-size: 1000px;
-  background-position: var(--x) var(--y);
-  width: 300px;
-  height: 300px;
-  border: 1px solid white; */
-  /* transform-style: preserve-3d;
-  z-index: 2; */
-  /* perspective: 40px; */
 }
-.eyes{
+.eyes {
   width: 100%;
   aspect-ratio: auto;
-position: absolute;
-
-  /* transform: translateZ(-10px) scale(2); */
+  position: relative;
+  left: -4rem;
 }
-.faces{
+.face {
   width: 100%;
   aspect-ratio: auto;
-position: absolute;
-
-  /* transform: translateZ(-7.5px) scale(1.75); */
+  position: absolute;
 }
 
 #projects > h2 {
   text-align: center;
+  margin-top: 3rem;
+  font-size: calc(var(--regular) + 6vmin);
 }
 
 .ordinal {
@@ -371,6 +382,7 @@ position: absolute;
   grid-template-rows: auto;
   gap: 4rem;
   align-items: center;
+  max-width: 94rem;
 }
 
 @media (max-width: 60rem) {
@@ -381,8 +393,9 @@ position: absolute;
 }
 
 .about-project .contain-thumb {
-  /* aspect-ratio: 3/2; */
   width: 100%;
+  height: 20rem;
+
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
@@ -396,7 +409,7 @@ position: absolute;
   transition: all 1s;
 }
 
-.small-description{
+.small-description {
   padding: 2rem 0;
 }
 
@@ -436,6 +449,22 @@ position: absolute;
 .thumb {
   width: 100%;
   height: 100%;
+}
+
+.art {
+  background: url("../thumbs/art.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
+.memory {
+  background: url("../thumbs/memory.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
 }
 
 .flex-cv {
@@ -621,7 +650,6 @@ input[type="checkbox"]:checked {
 @keyframes createBox {
   from {
     transform: scale(0);
-    /* transform-origin:50%; */
   }
   to {
     transform: scale(1);
@@ -725,41 +753,39 @@ input[type="checkbox"]:checked {
   color: var(--almostwhite);
 }
 
-
-
-.modal-toggle{
+.modal-toggle {
   cursor: pointer;
 }
 
 .modal-overlay {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	cursor: default;
-	background: var(--dark);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: default;
+  background: var(--dark);
   overflow-y: hidden;
 }
 
 .modal {
-	display: none;
-	position: fixed;
-	top: 5%;
-	left: 0;
-	right: 0;
-	margin: 0 auto 0 auto;
-	background: var(--medium);
-  width:80%;
-	padding: 16px;
-	border-radius: 5px;
-	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
-	z-index: 3;
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0 auto;
+  background: var(--medium);
+  width: 80%;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
+  z-index: 3;
 
   text-align: center;
-  animation: createBox .5s;
+  animation: createBox 0.5s;
 }
 
 @media (max-width: 40rem) {
@@ -769,12 +795,12 @@ input[type="checkbox"]:checked {
   }
 }
 
-.modal > p{
+.modal > p {
   text-align: right;
   padding: 0px;
   margin: 0px;
 }
-.modal > img{
+.modal > img {
   max-width: 90%;
   max-height: 80%;
   aspect-ratio: auto;
@@ -791,7 +817,8 @@ button.modal-close {
   border-style: none;
 }
 
-button:hover{
+button:hover {
   color: var(--blue);
-  text-shadow: -1px 0 var(--black), 0 1px var(--black), 1px 0 var(--black), 0 -1px var(--black), 5px 3px 4px var(--black);
+  text-shadow: -1px 0 var(--black), 0 1px var(--black), 1px 0 var(--black),
+    0 -1px var(--black), 5px 3px 4px var(--black);
 }
