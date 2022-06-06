@@ -47,6 +47,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
   overflow-x: hidden;
+
+  /* content-visibility: auto;
+  contain-intrinsic-size: 1px 5000px; */
 }
 
 body::-webkit-scrollbar {
@@ -451,6 +454,85 @@ section {
   height: 100%;
 }
 
+.flashcards-1 {
+  background: url("../thumbs/flashcards-1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.flashcards-2 {
+  background: url("../thumbs/flashcards-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.flashcards-3 {
+  background: url("../thumbs/flashcards-3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.flashcards-4 {
+  background: url("../thumbs/flashcards-4.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.flashcards-5 {
+  background: url("../thumbs/flashcards-5.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.flashcards-6 {
+  background: url("../thumbs/flashcards-6.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
+.clock-1 {
+  background: url("../thumbs/clock-1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.clock-2 {
+  background: url("../thumbs/clock-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.clock-3 {
+  background: url("../thumbs/clock-3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.clock-4 {
+  background: url("../thumbs/clock-4.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.clock-5 {
+  background: url("../thumbs/clock-5.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
 .art {
   background: url("../thumbs/art.png");
   background-position: center;
@@ -469,6 +551,14 @@ section {
 
 .flex-cv {
   background: url("../thumbs/flex-cv.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
+.portfolio-retro {
+  background: url("../thumbs/portfolio-retro.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -777,11 +867,11 @@ input[type="checkbox"]:checked {
   left: 0;
   right: 0;
   margin: 0 auto 0 auto;
-  background: var(--medium);
+  /* background: var(--medium); */
   width: 80%;
   padding: 16px;
-  border-radius: 5px;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
+  /* border-radius: 5px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35); */
   z-index: 3;
 
   text-align: center;
