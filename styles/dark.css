@@ -82,6 +82,7 @@ h1 {
   margin: 0px;
   padding: 0px 0px 10px 0px;
   font-weight: 800;
+  text-align: left
 }
 
 h2 {
@@ -115,7 +116,7 @@ h3 {
   background: linear-gradient(-45deg, #212121, #3e3e3e, #1d3f55, #212121);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
 .activate {
@@ -131,12 +132,12 @@ h3 {
   }
 }
 
-#header,
+/* #header,
 #about,
 #projects,
 #contact {
   scroll-snap-align: start;
-}
+} */
 
 @keyframes gradient {
   0% {
