@@ -13,7 +13,7 @@ html {
 :root {
   --regular: clamp(1rem, 2vmin, 2rem);
 
-  --background: url("../img/tape.jpg");
+  --background: url("../img/keyboard.jpg");
 
   --transparent: rgba(1, 1, 1, 0);
   --white: #ffffff;
@@ -121,7 +121,7 @@ h3 {
 
 .activate {
   animation-name: fly-in;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
 
@@ -234,7 +234,7 @@ hr {
 }
 
 .greeting {
-  animation: slideFromRight 3s;
+  animation: slideFromRight 1s;
 }
 
 @keyframes slideFromRight {
@@ -735,7 +735,7 @@ input[type="checkbox"]:checked {
 
 .right-slide-activate {
   opacity: 1;
-  animation: slideFromRight 1s;
+  animation: slideFromRight 0.5s;
 }
 
 @keyframes createBox {
