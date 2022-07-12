@@ -1,8 +1,5 @@
-// const about = document.querySelector("#about");
-// const projects = document.querySelector("#projects");
-// const contact = document.querySelector("#contact");
-
 //  SCROLL ANIMATIONS
+
 const reveal = document.querySelectorAll(".reveal");
 const rightSlide = document.querySelectorAll(".right-slide");
 
@@ -12,7 +9,7 @@ const options = {
   // rootMargin: "-150px",
 };
 
-//Fade elements in
+//Fade in while scrolling
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
@@ -25,9 +22,8 @@ const observer = new IntersectionObserver(function (entries, observer) {
 }, options);
 
 reveal.forEach((section) => observer.observe(section));
-// observer.observe(projects);
 
-//Slide elements from right right-slide-activate
+//Slide elements from right
 const slideObserver = new IntersectionObserver(function (
   entries,
   slideObserver
@@ -54,9 +50,7 @@ let modalImage = document.querySelector("#modal-img");
 
 const modalToggles = document.querySelectorAll(".modal-toggle");
 
-for (let i = 0; i < modalToggles.length; i++) {
-  modalToggles[i].addEventListener("click", openModal);
-}
+modalToggles.forEach((toggle) => toggle.addEventListener("click", openModal))
 
 function openModal() {
   // Save current focus
@@ -75,9 +69,7 @@ function openModal() {
   // Modal close buttons
   const closeButtons = modal.querySelectorAll(".modal-close");
 
-  for (let i = 0; i < closeButtons.length; i++) {
-    closeButtons[i].addEventListener("click", closeModal);
-  }
+  closeButtons.forEach((button) => button.addEventListener("click", closeModal));
 
   // Find all focusable children
   const focusableElementsString =
@@ -128,43 +120,16 @@ function openModal() {
   }
 }
 
-/**
- * Closes the modal.
- */
+//Close the modal
 function closeModal() {
-  // Animate the close
+  // animate
   modal.classList.add("modal-closed");
 
-  // This setTimeout just allows for the animation, not required.
   setTimeout(function () {
-    // Hide the modal and overlay
     modal.style.display = "none";
     modalOverlay.style.display = "none";
   }, 300);
 
-  // Set focus back to element that had it before the modal was opened
+  // set focus back to before the modal was opened
   focusedElementBeforeModal.focus();
 }
-
-//eye animation
-// const el = document.querySelector("#look");
-
-// el.addEventListener("mousemove", (e) => {
-//   el.style.setProperty('--x', -e.offsetX + "px");
-//   el.style.setProperty('--y', -e.offsetY + "px");
-// });
-
-var container = document.querySelector("#jamf-container");
-var mover = document.querySelector("#jamf-mover");
-
-container.addEventListener("mousemove", function (e) {
-  mover.style.backgroundPositionX = -e.offsetX + 0.0018 + "px";
-  mover.style.backgroundPositionY = -e.offsetY + 0.008 + "px";
-});
-
-container.addEventListener("mouseenter", function () {
-  setTimeout(function () {
-    mover.classList.add("no-more-slidey");
-    container.removeEventListener("mouseenter");
-  }, 250);
-});

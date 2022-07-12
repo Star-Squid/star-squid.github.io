@@ -47,9 +47,6 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
   overflow-x: hidden;
-
-  /* content-visibility: auto;
-  contain-intrinsic-size: 1px 5000px; */
 }
 
 body::-webkit-scrollbar {
@@ -116,7 +113,6 @@ h3 {
   background: linear-gradient(-45deg, #212121, #3e3e3e, #1d3f55, #212121);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
-  /* scroll-snap-type: y proximity; */
 }
 
 .activate {
