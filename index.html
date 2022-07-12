@@ -16,7 +16,7 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Front-end developer exploring the possibilities of the full stack"
+      content="Frontend developer exploring the possibilities of the full stack"
     />
     <meta name="author" content="Barbara Malta" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,6 @@
     <link rel="icon" href="favicon.ico" sizes="any" />
 
     <!-- styles, fonts -->
-    <!-- <link rel="preload" href="img/tape.jpg" as="image" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -119,24 +118,22 @@
             <h2 class="right-slide">About</h2>
 
             <p class="right-slide">
-              When I coded my first “Hello World” using Notepad at the start of
-              the millenium, it felt eye-opening, but did not have substantial
-              consequences, other than a number of gif-rich personal pages and
-              templates for blog.pl.
+              When I coded my first “Hello World” using Notepad on Windows 98, it felt like the most significant and eye-opening activity in the world. However, aside from a number of gif-rich personal pages and blogs, that period did not have any substantial outcomes.
             </p>
 
             <p class="right-slide">
-              I renewed my study of code in 2021, and my focus is web development with JavaScript. I still have a certain affinity for retro-style design, but I refrain from using neon text effects.<br>
-              <span class="flicker">Most times.</span>
+              I renewed my study of code in 2021, and based on previous experiences, made web development my focus. I am now a great fan of flexbox-based layouts and JavaScript. I still have a certain affinity for retro-style design, but I refrain from using neon text effects.<br>
+              <span class="flicker">Most of the time.</span>
             </p>
 
             <p class="right-slide">
-              Self-study does nothing to make one feel like an expert, but after finishing my online Web Development and JavaScript courses, I feel ready for a junior role where I can help a company achieve their goals.
+              I am making efforts to focus more on the backend side of coding, because it seems more "serious", but whenever I see a well-designed website, I will spend hours checking what makes it work. It seems that every little topic I learn deserves its own stand-alone project. Not all ideas can be turned into reality, but below are the ones that made it.
             </p>
 
-            <p class="right-slide">
-              I am making efforts to get into Python, PHP and Go, because it seems like that’s where all the "serious" coding happens, but whenever I see a well-designed website, I will spend hours checking what makes it work. It seems that every little topic I learn deserves its own stand-alone project. Not all ideas can be turned into reality, but below are the ones that made it.
-            </p>
+            <!-- <p class="right-slide">
+              After finishing my online Web Development and JavaScript courses, I feel ready for a junior role where I can help a company achieve their goals.
+            </p> -->
+
           </div>
         </div>
       </section>
@@ -150,7 +147,7 @@
 
         <div class="about-project">
           <p class="reveal">
-            The idea for Flipping Flashcards was inspired by a discussion online where the consensus was that flashcards were a brilliant tool for learning anything under the sun and THE key to passing exams. This being the 21st century, I was not about to make paper flashcards, but a realistic flipping animation was essential to my vision. At no point did I try any existing flashcard apps; it was no more than a millisecond between “I’d like to try a tool like this” to “I think I can make something like this”. 
+            The idea for Flipping Flashcards was inspired by an online discussion about studying, where the consensus was that flashcards were a brilliant tool for learning anything under the sun and <em>the</em> key to passing exams. This being the 21st century, I was not about to make paper flashcards, but a realistic flipping animation was essential to my vision. At no point did I try any existing flashcard apps; it was no more than a millisecond between “I’d like to try a tool like this” to “I think I can make a tool like this”. 
           </p>
 
           <a class="modal-toggle">
@@ -168,9 +165,10 @@
           <p class="reveal">
             <b class="ordinal">01.</b><br />
             The main features I envisioned for this project were:<br>
-            – the card should seem to physically flip<br>
-            – the user should be able to upload their own content<br>
-            – the user should be able to influence which questions get shown more often<br>
+             – the card should seem to physically flip,<br>
+             – the user should be able to upload their own content,<br>
+             – the user should be able to influence which questions get repeated more often.<br>
+             <br>
             All of these generated issues that needed solving.
           </p>
 
@@ -178,9 +176,9 @@
             <b class="ordinal">02.</b><br>
             Coding the interface was the most fun part. For the first iteration, I went a bit crazy with a retro neon design before settling on a more toned down colour scheme.<br><br>
 
-            I chose <a href="https://nnattawat.github.io/flip/">jQuery Flip</a> as the mechanism to handle card movement. However, it required additional work to make the design accessible. (I ended up binding the up arrow to the flip() function, and for screen readers I added an invisible focusable button that does the same). The rating buttons in the first version were positioned outside of the actual flashcard.<br><br>
+            I chose <a href="https://nnattawat.github.io/flip/">jQuery Flip</a> as the mechanism to handle card movement. However, it required additional work to make the design accessible. (I ended up binding the space key to the flip() function. In the first version, buttons for assigning a rating to each card  were positioned outside of the actual flashcard.<br><br>
 
-            A crucial part of the project was allowing the user to indicate how well they knew the answer and translating that input to how often a particular card gets shown. To that end, each card object gets assigned a rating of 6 points when created. These ratings indicate how many times the card gets copied into the temporary array out of which the next random card is drawn. This array gets created every time a new card is needed, so the number of cards gets refreshed when ratings change; the user's click on one of the three rating buttons removes 2, 1, or none of the card's points. This system is easy to customise - changing difficulty is as easy as assigning a different rating when the card objects get created. (Difficulty level was included as an option in the settings.)
+            A crucial part of the project was allowing the user to indicate how well they knew the answer to each question and translating that input to how often a particular card gets shown. To that end, each card object is assigned a rating of 6 points when created. These ratings indicate how many times the card gets copied into the temporary array out of which the next random card is drawn. This array gets created every time a new card is needed, so the number of cards gets refreshed whenever a rating changes; the user's click on one of the three rating buttons removes 2, 1, or none of the card's points. This system is easy to customise - changing difficulty is as easy as assigning a different rating when the card objects are first created. (Difficulty level was included as an option in the settings.)
           </p>
 
           <a class="modal-toggle">
@@ -197,19 +195,19 @@
 
           <p class="reveal">
             <b class="ordinal">05.</b><br />
-            There are three sets of cards hard-coded into the .js file, but customising the content is an essential part of the Flipping Flashcard concept. I needed a human-readable format that could also be easily split into strings for use with the factory function. Researching different methods of importing external data into JavaScript was a process of trial and error. The original idea was to use either local Excel files or Google Sheets. As interesting as it was to learn to access Google Sheets remotely through Node.js, I wasn't happy with how complex the process of parsing the result was. Fixation on spreadsheets led me to learn how to use the Google Sheets API, followed by <a href="https://github.com/bpk68/g-sheets-api#readme">Google Sheets Reader</a>, veering to <a href="https://www.npmjs.com/package/xlsx">SheetsJS</a> for a stab at local spreadsheets, before I finally settled on importing .csv as a string as the simplest, most elegant solution. Later I also included the option to use a .json file.
+            There are three sets of cards hard-coded into the .js file, but customising the content is an essential part of the Flipping Flashcard concept. I needed a human-readable format that could also be easily split into strings for use with the card factory function. Researching different methods of importing external data into JavaScript was a process of trial and error. The original idea was to use either local Excel files or Google Sheets. As interesting as it was to learn to access Google Sheets remotely through Node.js, I wasn't happy with how complex the process of parsing the result was. Fixation on spreadsheets led me to learn how to use the Google Sheets API, followed by <a href="https://github.com/bpk68/g-sheets-api#readme">Google Sheets Reader</a>, veering to <a href="https://www.npmjs.com/package/xlsx">SheetsJS</a> for a stab at local spreadsheets, before I finally settled on importing .csv instead, as the simplest, most elegant solution. Later I also included the option to use a .json file.
           </p>
 
           <p class="reveal">
             <b class="ordinal">06.</b><br />
-            The single most important decision for this project was bringing in a test user. His feedback, combined with <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Jakob Nielsen's article on design heuristics</a>, led me to implement the following changes from v1.0 to 2.0:<br>
-            - add a welcome page with a prominent call to action<br>
-            - automatically prompt to choose a study subject on load<br>
-            - more muted default colour palette, with the option to choose neon colours from settings<br>
-            - integrate the rating stars into the back of the flashcard<br>
-            - include a status box with information about the current card set, the user’s progress, and current ratings<br>
-            - introduce keyboard shortcuts<br>
-            - remove detailed user instructions, opting instead to make the interface self-explanatory by employing game-like design solutions
+            The single most important decision in the lide of this project was bringing in a test user. His feedback, combined with <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Jakob Nielsen's article on design heuristics</a>, led me to implement the following changes from version 1.0 to 2.0:<br>
+             - add a welcome page with a prominent call to action,<br>
+             - automatically prompt to choose a study subject on load,<br>
+             - more muted default colour palette, with the option to choose neon colours from settings,<br>
+             - integrate the rating stars into the back of the flashcard,<br>
+             - include a status box with information about the current card set, the user’s progress, and current ratings,<br>
+             - introduce keyboard shortcuts,<br>
+             - remove detailed user instructions, opting instead to make the interface self-explanatory by employing game-like design solutions.
           </p>
 
           <a class="modal-toggle">
@@ -226,7 +224,7 @@
 
           <p class="reveal">
             <b class="ordinal">07.</b><br>
-            This project is not completely finished and may never be. I have concluded that there is not one best format for importing user questions. CSV is a simple, convenient, readable format, but its lack of text formatting features makes it only suitable for simple questions and one-sentence answers. JSON has more possibilities, but in both cases the user has to create a file especially for use with Flipping Flashcards. The solution will be to add yet another accepted file format.<br><br>
+            This project is not completely finished and may never be. I have yet to find the one best format for importing user questions; .csv is a simple, convenient, readable format, but its lack of text formatting features makes it only suitable for simple questions and one-sentence answers. More options are offered by .json, but in both cases the user has to create a file especially for use with Flipping Flashcards. The solution will be to add yet another accepted file format.<br><br>
 
             With accessibility in mind, I made sure the interface includes keyboard shortcuts for rating as well as flipping the card without clicking.<br><br>
 
@@ -247,11 +245,11 @@
 
         <div class="about-project">
           <p class="reveal">
-            This project was inspired by watching a <a href="https://youtu.be/NeopkvAP-ag">Technology Connections's video</a> on the benefits of analog clocks. I'd never been a fan of those; couldn't quite get behind the idea that the long hand should indicate the shorter unit of time, not to mention the reversal of direction that comes with the round shape (the hand moves down for the first 30 minutes and up for the second half).<br><br>
+            The Workday Clock was inspired by a <a href="https://youtu.be/NeopkvAP-ag">Technology Connections's video</a> on the benefits of analog clocks. I'd never been a fan of those; couldn't quite get behind the idea that the long hand should indicate the shorter unit of time, not to mention the reversal of direction that comes with the round shape (the hand moves down for the first 30 minutes and up for the second half).<br><br>
 
-            However, the video changed my mind to an extent and crystallized an idea: the perfect clock should provide a visual representation of the length of each hour and the whole day, as well as enable me to easily visualize time remaining to an appointment. However, there would be only one direction of travel, and any time outside of active work hours would not be shown. Although work happens at all hours of the day, watching the clock in the evening brings only stress to an insomniac.<br><br>
+            However, the video changed my mind to an extent and crystallized an idea: the perfect clock should provide a visual representation of the length of each hour and the whole day, as well as make it easy to visualize time remaining to an appointment. However, there would be only one direction of travel, and any time outside of active work hours would not be shown. Although work happens at all hours of the day, watching the clock in the evening brings nothing but stress.<br><br>
 
-            This clock is optimised perfectly to my needs, but should also be immediately legible to someone else without extra explanations
+            This clock is optimised perfectly to my needs, but should also be legible to someone else without lengthy explanations.
           </p>
 
           <a class="modal-toggle">
@@ -268,24 +266,24 @@
 
           <p class="reveal">
             <b class="ordinal">01.</b><br />
-            While the ordinary clock represents the day and each hour as a circle, mine uses arch shapes, which is closer to the idea of a progress bar. The larger arch shows hours between 9.00 and 18.00, and the small one provides an extra visualization of each hour.<br><br>
+            While the ordinary clock represents the day and each hour as a circle, mine uses arch shapes, which conform better to the idea of a progress bar. The larger arch shows hours between 9:00 and 18:00, and the small one provides additional visualization for each hour as it passes.<br><br>
 
-            In order to achieve the shape of the clock faces, I used a semi-circle conical gradient with each colour section corresponding to one hour. In a pleasant coincidence, the 180 degrees of the half-circle are easy to divide by the 9 hours represented, so every hour is 20 degrees of the half-circle.<br><br>
+            In order to achieve the shape of the clock faces, I used a semi-circle conical gradient, where each colour section corresponds to one hour. As a pleasant coincidence, 180 degrees of the half-circle are easy to divide by the 9 hours represented, so every hour is equal to 20 degrees of the half-circle.<br><br>
 
-            Over that is overlaid a semi-opaque conical gradient which updates every minute to indicate the passage of time, and a final small circular gradient cuts out the bottom of the arch.<br><br>
+            Over that, I overlaid a semi-opaque conical gradient which updates every minute to indicate the passage of time, and a final small opaque semicircle creates the underside of the arch.<br><br>
 
-            The appointment feature adds yet another gradient layer to the stack. This solution allows for adding multiple appointments, although if their times overlap, they merge together. This is fine for my purpose, since the appointment feature is only there to help visualise the time remaining before it starts.<br><br>
+            The appointment feature adds yet another gradient layer to the middle of the stack. This solution allows for adding one custom section to the clock. This is fine for my purpose, since the appointment feature is only there to help visualise the time remaining before it starts.<br><br>
 
-            The small arch has the same basic structure, minus the appointment layer.
+            The small arch representing one hour has the same basic structure, minus the appointment layer.
           </p>
 
           <p class="reveal">
             <b class="ordinal">02.</b><br>
-            The gradient layer is controlled by the function updateTime(), which runs once on page load and then once per minute. The interval is easy to adjust, but this project does not need higher precision.<br><br>
+            The time-indicating layers of both arches are controlled by the function updateTime(), which runs once on page load and then once per minute. The interval is easy to adjust, but this project does not need higher precision.<br><br>
 
-            The event handler for appointment submission converts hours to degrees of dome and creates a gradient section to cover the area on the clock between start and end times. There is a button that clears this layer. At first, activating the dialog without choosing appointment times would also clear the layer, but allowing the user to leave either start or end time unselected was too prone to errors.<br><br>
+            The event handler for appointment submission converts hours to degrees of dome and creates a gradient section to cover the area on the clock between start and end times. There is a button that clears this layer. At first, activating the dialog without choosing appointment times could also be used to clear this layer, but allowing the user to leave either start or end time unselected was too prone to errors.<br><br>
 
-            The appointment option is accessed through a jQuery dialog box, though if I was writing it today I would prefer the HTML dialog tag or a modal solution optimised for accessibility. User feedback was invaluable in improving the behaviour of the appointment feature.
+            The appointment option is accessed through a jQuery dialog box, though if I was writing it today I would prefer the HTML dialog tag or a modal solution optimised for accessibility. Feedback from test users was invaluable in improving the behaviour of the appointment feature.
           </p>
 
           <a class="modal-toggle">
@@ -302,7 +300,7 @@
 
           <p class="reveal">
             <b class="ordinal">05.</b><br />
-            A fun little extra feature is the additional colour themes for the clock. The colours and backgrounds are encoded as css variables, so switching themes is as simple as swapping different :roots. This is handled in JavaScript through the setTheme() function. 
+            A fun extra feature is the additional colour themes for the clock. The colours and backgrounds are encoded as css variables, so switching themes is as simple as swapping different :roots. This is handled in JavaScript through the setTheme() function. 
           </p>
 
           <p class="reveal">
@@ -324,7 +322,7 @@
 
         <h2 class="right-slide">Small projects</h2>
         <p class="reveal small-description">
-          One-page, one-concept, quick projects — that I still think are cool enough to share.
+          One-concept, quick projects — that I still think are cool enough to share.
         </p>
 
         <div class="cards">
@@ -520,11 +518,9 @@
                 id="human"
                 name="Human"
                 value="human"
-                required
               />
               <label for="human"
-                >&nbsp; I am a human, vegetable, or mineral</label
-              >
+                >&nbsp; I am a human, vegetable, or mineral</label>
             </p>
 
             <p class="button-area right-slide">
