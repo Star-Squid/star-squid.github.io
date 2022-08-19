@@ -79,7 +79,7 @@ h1 {
   margin: 0px;
   padding: 0px 0px 10px 0px;
   font-weight: 800;
-  text-align: left
+  text-align: left;
 }
 
 h2 {
@@ -449,6 +449,42 @@ section {
 .thumb {
   width: 100%;
   height: 100%;
+}
+
+.blog-1 {
+  background: url("../thumbs/blog-1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.blog-2 {
+  background: url("../thumbs/blog-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.blog-3 {
+  background: url("../thumbs/blog-3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.blog-4 {
+  background: url("../thumbs/blog-4.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.blog-5 {
+  background: url("../thumbs/blog-5.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
 }
 
 .flashcards-1 {

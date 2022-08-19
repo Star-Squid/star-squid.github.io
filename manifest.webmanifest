@@ -1,4 +1,7 @@
 {
+  "short_name": "Squid Blog",
+  "name": "Star Squid Blog",
+  "description": "I post random thoughts as an excuse to play with web development concepts",
     "icons": [
       { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
       { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
