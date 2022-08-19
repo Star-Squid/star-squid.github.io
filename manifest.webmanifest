@@ -1,15 +1,25 @@
 
-  {
-    "theme_color": "#2E3E4B",
-    "background_color": "#CCCCCC",
-    "display": "fullscreen",
-    "scope": "/",
-    "start_url": "/",
-    "short_name": "Portfolio",
+{
+  "theme_color": "#2E3E4B",
+  "background_color": "#CCCCCC",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
   "name": "Barbara's Portfolio",
+  "short_name": "Portfolio",
   "description": "Web development projects inside a web developmennt project",
-    "icons": [
-      { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any" },
-      { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" }
-    ]
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ]
 }
