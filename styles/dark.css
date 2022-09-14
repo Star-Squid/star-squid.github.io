@@ -487,6 +487,14 @@ section {
   transition: all 1s;
 }
 
+.dice {
+  background: url("../thumbs/dice.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+
 .flashcards-1 {
   background: url("../thumbs/flashcards-1.png");
   background-position: center;

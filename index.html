@@ -94,26 +94,26 @@
 
       <section id="header">
         <div class="hello">
-          <div class="greeting reveal">
+          <div class="greeting reveal" role="heading">
             <h1>
               Hello,
               <br />
               I am Barbara Malta
             </h1>
           </div>
-          <div class="description reveal">full-stack developer in training</div>
+          <div class="description reveal" role="heading">full-stack developer in training</div>
         </div>
       </section>
 
       <section id="about">
-        <div class="about-project">
+        <div class="about-project" role="presentation">
           <img
             class="face reveal"
             src="img/faces-with-eyes.png"
             alt="Barbara with Potato the cat"
           />
 
-          <div>
+          <div role="presentation">
             <h2 class="right-slide">About</h2>
 
             <p class="right-slide">
@@ -157,7 +157,7 @@
           react &middot; graphQL &middot; contentful api
         </p>
 
-        <div class="about-project">
+        <div class="about-project" role="presentation">
           <p class="reveal">
             This website doesn't have an interesting origin story, unless
             googling "best projects to learn React" counts as a story. The Star
@@ -175,7 +175,7 @@
           </p>
 
           <a class="modal-toggle">
-            <div class="contain-thumb reveal">
+            <div class="contain-thumb reveal" >
               <div class="thumb blog-1"></div>
             </div>
           </a>
@@ -572,7 +572,25 @@
           share.
         </p>
 
-        <div class="cards">
+        <div class="cards" role="presentation">
+          <div class="card reveal">
+            <a href="https://mb-malta.co.uk/DiceStats/">
+              <div class="contain-thumb">
+                <div class="thumb dice"></div>
+              </div>
+            </a>
+            <h3>Dice Stats</h3>
+            <p class="languages">javascript &middot; html &middot; css</p>
+            <p>
+              Contributed the UI for an open-source dice probability-checker.
+            </p>
+            <p>
+              <a href="https://mb-malta.co.uk/DiceStats/">link</a> &middot;
+              <a href="https://github.com/Landsil/landsil.github.io/tree/master/DiceStats">code</a>
+            </p>
+          </div>
+
+        <div class="cards" role="presentation">
           <div class="card reveal">
             <a href="https://star-squid.art">
               <div class="contain-thumb">
@@ -590,7 +608,7 @@
             </p>
           </div>
 
-          <div class="card reveal">
+          <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/memory">
               <div class="contain-thumb">
                 <div class="thumb memory"></div>
@@ -607,7 +625,7 @@
             </p>
           </div>
 
-          <div class="card reveal">
+          <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/flex-cv">
               <div class="contain-thumb">
                 <div class="thumb flex-cv"></div>
@@ -641,7 +659,7 @@
             </p>
           </div> -->
 
-          <div class="card reveal">
+          <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/high-five">
               <div class="contain-thumb">
                 <div class="thumb high-five"></div>
@@ -657,7 +675,7 @@
             </p>
           </div>
 
-          <div class="card reveal">
+          <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/hookd">
               <div class="contain-thumb">
                 <div class="thumb hookd"></div>
@@ -780,13 +798,13 @@
               <button type="reset" class="pushable">
                 <span role="presentation" class="shadow"></span>
                 <span role="presentation" class="edge"></span>
-                <span class="frontbtn"> Clear </span>
+                <span class="frontbtn" role="button"> Clear </span>
               </button>
 
               <button type="submit" name="Submit" class="pushable primary">
                 <span role="presentation" class="shadow"></span>
                 <span role="presentation" class="edge"></span>
-                <span class="frontbtn"> Send! </span>
+                <span class="frontbtn" role="button"> Send! </span>
               </button>
             </p>
           </fieldset>
