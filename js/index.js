@@ -58,7 +58,7 @@ function openModal() {
 
   //Save current image clicked, display it in the modal
   imgThatWasClicked = this.children[0].children[0].classList[1];
-  modalImage.src = "thumbs/" + imgThatWasClicked + ".png";
+  modalImage.src = "thumbs/" + imgThatWasClicked + ".webp";
 
   // Listen for and trap the keyboard
   modal.addEventListener("keydown", trapTabKey);

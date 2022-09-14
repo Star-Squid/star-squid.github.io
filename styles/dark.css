@@ -13,7 +13,7 @@ html {
 :root {
   --regular: clamp(1rem, 2vmin, 2rem);
 
-  --background: url("../img/keyboard.jpg");
+  --background: url("../img/keyboard.webp");
 
   --transparent: rgba(1, 1, 1, 0);
   --white: #ffffff;
@@ -402,7 +402,7 @@ section {
 }
 
 .flashcards-start {
-  background: url("../thumbs/flashcards-start.png");
+  background: url("../thumbs/flashcards-start.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -452,35 +452,35 @@ section {
 }
 
 .blog-1 {
-  background: url("../thumbs/blog-1.png");
+  background: url("../thumbs/blog-1.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .blog-2 {
-  background: url("../thumbs/blog-2.png");
+  background: url("../thumbs/blog-2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .blog-3 {
-  background: url("../thumbs/blog-3.png");
+  background: url("../thumbs/blog-3.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .blog-4 {
-  background: url("../thumbs/blog-4.png");
+  background: url("../thumbs/blog-4.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .blog-5 {
-  background: url("../thumbs/blog-5.png");
+  background: url("../thumbs/blog-5.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -488,7 +488,7 @@ section {
 }
 
 .dice {
-  background: url("../thumbs/dice.png");
+  background: url("../thumbs/dice.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -496,42 +496,42 @@ section {
 }
 
 .flashcards-1 {
-  background: url("../thumbs/flashcards-1.png");
+  background: url("../thumbs/flashcards-1.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .flashcards-2 {
-  background: url("../thumbs/flashcards-2.png");
+  background: url("../thumbs/flashcards-2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .flashcards-3 {
-  background: url("../thumbs/flashcards-3.png");
+  background: url("../thumbs/flashcards-3.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .flashcards-4 {
-  background: url("../thumbs/flashcards-4.png");
+  background: url("../thumbs/flashcards-4.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .flashcards-5 {
-  background: url("../thumbs/flashcards-5.png");
+  background: url("../thumbs/flashcards-5.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .flashcards-6 {
-  background: url("../thumbs/flashcards-6.png");
+  background: url("../thumbs/flashcards-6.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -539,35 +539,35 @@ section {
 }
 
 .clock-1 {
-  background: url("../thumbs/clock-1.png");
+  background: url("../thumbs/clock-1.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .clock-2 {
-  background: url("../thumbs/clock-2.png");
+  background: url("../thumbs/clock-2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .clock-3 {
-  background: url("../thumbs/clock-3.png");
+  background: url("../thumbs/clock-3.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .clock-4 {
-  background: url("../thumbs/clock-4.png");
+  background: url("../thumbs/clock-4.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
 }
 .clock-5 {
-  background: url("../thumbs/clock-5.png");
+  background: url("../thumbs/clock-5.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -575,7 +575,7 @@ section {
 }
 
 .art {
-  background: url("../thumbs/art.png");
+  background: url("../thumbs/art.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -583,7 +583,7 @@ section {
 }
 
 .memory {
-  background: url("../thumbs/memory.png");
+  background: url("../thumbs/memory.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -591,7 +591,7 @@ section {
 }
 
 .flex-cv {
-  background: url("../thumbs/flex-cv.png");
+  background: url("../thumbs/flex-cv.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -599,7 +599,7 @@ section {
 }
 
 .portfolio-retro {
-  background: url("../thumbs/portfolio-retro.png");
+  background: url("../thumbs/portfolio-retro.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -607,7 +607,7 @@ section {
 }
 
 .high-five {
-  background: url("../thumbs/high-five.png");
+  background: url("../thumbs/high-five.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -615,7 +615,7 @@ section {
 }
 
 .hookd {
-  background: url("../thumbs/hookd.png");
+  background: url("../thumbs/hookd.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -623,7 +623,7 @@ section {
 }
 
 .family {
-  background: url("../thumbs/family.png");
+  background: url("../thumbs/family.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
