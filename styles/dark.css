@@ -185,6 +185,19 @@ hr {
   text-align: center;
 }
 
+.skip-link a{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  translate: 0 -100%;
+  transition: translate 150ms ease-in-out;
+}
+
+.skip-link a:focus {
+  translate: 0;
+}
+
 .icons {
   z-index: 2;
   position: fixed;
