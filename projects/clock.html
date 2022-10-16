@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Web development projects inside a web development project"
+    />
+    <meta name="author" content="Barbara Malta" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workday Clock - Barbara's Portfolio</title>
+
+    <!-- favicons -->
+    <link rel="icon" href="../icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+
+    <!-- styles, fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/layout.css" rel="stylesheet" />
+    <link href="../styles/card-thumbs.css" rel="stylesheet" />
+    <link href="../styles/single-projects.css" rel="stylesheet" />
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/2a2cd0823a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/index.js" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <div class="container" role="presentation">
+      <nav class="links">
+        <ul>
+          <li class="skip-link">
+            <a href="#projects"> skip to main content</a>
+          </li>
+          <li>
+            <a href="../index.html">
+              <h2 class="logo">BM</h2>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html#about"> about </a>
+          </li>
+          <li>
+            <a href="../index.html#projects"> projects </a>
+          </li>
+          <li>
+            <a href="../index.html#contact"> contact </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="icons">
+        <ul>
+          <li>
+            <a href="mailto:barbara@mb-malta.co.uk"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/barbara-malta"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/Star-Squid"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="header">
+        <div class="hello" role="presentation">
+          <div class="greeting reveal" role="heading">
+            <h1>Workday Clock</h1>
+          </div>
+          <div class="description reveal" role="heading">
+            All the benefits of an analog clock without the awkwardness of
+            roundness
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <p class="reveal">
+          <a href="https://star-squid.github.io/Workday-Clock/">link</a>
+          &middot;
+          <a href="https://github.com/Star-Squid/Workday-Clock">code</a>
+        </p>
+        <h3 class="reveal">Workday Clock</h3>
+        <p class="reveal languages">javascript &middot; html &middot; css</p>
+
+        <div class="about-project" role="presentation">
+          <p class="reveal">
+            The Workday Clock was inspired by a
+            <a href="https://youtu.be/NeopkvAP-ag"
+              >Technology Connections's video</a
+            >
+            on the benefits of analog clocks. I'd never been a fan of those;
+            couldn't quite get behind the idea that the long hand should
+            indicate the shorter unit of time, not to mention the reversal of
+            direction that comes with the round shape (the hand moves down for
+            the first 30 minutes and up for the second half).<br /><br />
+
+            However, the video changed my mind to an extent and crystallized an
+            idea: the perfect clock should provide a visual representation of
+            the length of each hour and the whole day, as well as make it easy
+            to visualize time remaining to an appointment. However, there would
+            be only one direction of travel, and any time outside of active work
+            hours would not be shown. Although work happens at all hours of the
+            day, watching the clock in the evening brings nothing but stress.<br /><br />
+
+            This clock is optimised perfectly to my needs, but should also be
+            legible to someone else without lengthy explanations.
+          </p>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb clock-1" role="presentation"></div>
+            </div>
+          </a>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb clock-2" role="presentation"></div>
+            </div>
+          </a>
+
+          <p class="reveal">
+            <b class="ordinal">01.</b><br />
+            While the ordinary clock represents the day and each hour as a
+            circle, mine uses arch shapes, which conform better to the idea of a
+            progress bar. The larger arch shows hours between 9:00 and 18:00,
+            and the small one provides additional visualization for each hour as
+            it passes.<br /><br />
+
+            In order to achieve the shape of the clock faces, I used a
+            semi-circle conical gradient, where each colour section corresponds
+            to one hour. As a pleasant coincidence, 180 degrees of the
+            half-circle are easy to divide by the 9 hours represented, so every
+            hour is equal to 20 degrees of the half-circle.<br /><br />
+
+            Over that, I overlaid a semi-opaque conical gradient which updates
+            every minute to indicate the passage of time, and a final small
+            opaque semicircle creates the underside of the arch.<br /><br />
+
+            The appointment feature adds yet another gradient layer to the
+            middle of the stack. This solution allows for adding one custom
+            section to the clock. This is fine for my purpose, since the
+            appointment feature is only there to help visualise the time
+            remaining before it starts.<br /><br />
+
+            The small arch representing one hour has the same basic structure,
+            minus the appointment layer.
+          </p>
+
+          <p class="reveal">
+            <b class="ordinal">02.</b><br />
+            The time-indicating layers of both arches are controlled by the
+            function updateTime(), which runs once on page load and then once
+            per minute. The interval is easy to adjust, but this project does
+            not need higher precision.<br /><br />
+
+            The event handler for appointment submission converts hours to
+            degrees of dome and creates a gradient section to cover the area on
+            the clock between start and end times. There is a button that clears
+            this layer. At first, activating the dialog without choosing
+            appointment times could also be used to clear this layer, but
+            allowing the user to leave either start or end time unselected was
+            too prone to errors.<br /><br />
+
+            The appointment option is accessed through a jQuery dialog box,
+            though if I was writing it today I would prefer the HTML dialog tag
+            or a modal solution optimised for accessibility. Feedback from test
+            users was invaluable in improving the behaviour of the appointment
+            feature.
+          </p>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb clock-3" role="presentation"></div>
+            </div>
+          </a>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb clock-4" role="presentation"></div>
+            </div>
+          </a>
+
+          <p class="reveal">
+            <b class="ordinal">05.</b><br />
+            A fun extra feature is the additional colour themes for the clock.
+            The colours and backgrounds are encoded as css variables, so
+            switching themes is as simple as swapping different :roots. This is
+            handled in JavaScript through the setTheme() function.
+          </p>
+
+          <p class="reveal">
+            <b class="ordinal">06.</b><br />
+            Since a lot of the functionality of the Workday Clock relies on
+            changing graphic elements with JavaScript, the project is quite
+            css-heavy, and makes full use of gradients, variables and
+            positioning.<br /><br />
+
+            Although I don’t use the Workday Clock every day now, I feel that
+            building it and becoming used to looking at its shapes has given me
+            a better grasp on time and helped plan each working day.
+          </p>
+
+          <a class="modal-toggle" role="presentation">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb clock-5"></div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>

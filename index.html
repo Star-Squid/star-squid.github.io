@@ -35,7 +35,9 @@
       href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap"
       rel="stylesheet"
     />
-    <link href="styles/dark.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/layout.css" rel="stylesheet" />
+    <link href="styles/card-thumbs.css" rel="stylesheet" />
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
@@ -96,7 +98,7 @@
       </nav>
 
       <section id="header">
-        <div class="hello">
+        <div class="hello" role="presentation">
           <div class="greeting reveal" role="heading">
             <h1>
               Hello,
@@ -104,7 +106,9 @@
               I am Barbara Malta
             </h1>
           </div>
-          <div class="description reveal" role="heading">full-stack developer in training</div>
+          <div class="description reveal" role="heading">
+            frontend developer
+          </div>
         </div>
       </section>
 
@@ -122,7 +126,7 @@
             <p class="right-slide">
               When I coded my first “Hello World” using Notepad on Windows 98,
               it felt like the most significant and eye-opening activity in the
-              world. However, aside from a number of gif-rich personal pages and
+              world. However, aside from a number of gif-enriched personal pages and
               blogs, that period did not have any substantial outcomes.
             </p>
 
@@ -143,430 +147,74 @@
               stand-alone project. Not all ideas can be turned into reality, but
               below are the ones that made it.
             </p>
-
           </div>
         </div>
       </section>
 
       <section id="projects">
+        <hr />
         <h2 class="reveal">Favourite projects</h2>
-
-        <p class="reveal">
-          <a href="https://magnificent-griffin-60d663.netlify.app/">link</a>
-          &middot; <a href="https://github.com/Star-Squid/squidblog">code</a>
+        <p class="reveal small-description">
+          Some special projects deserved a whole page to themselves.
         </p>
-        <h3 class="reveal">Star Squid Blog</h3>
-        <p class="reveal languages">
-          react &middot; scss &middot; graphQL &middot; contentful api
-        </p>
+        <div class="cards" role="presentation">
+          <div class="card reveal" role="presentation">
+            <a href="projects/blog.html">
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb blog-1"></div>
+              </div>
+            </a>
+            <h3>Star Squid Blog</h3>
+            <p class="languages">
+              react &middot; scss &middot; graphQL &middot; contentful api
+            </p>
+            <p>
+              Going back to basics with a personal blog and into the future with
+              modern web solutions.
+            </p>
+            <p>
+              <a href="projects/blog.html" class="readmore">READ MORE</a>
+              <i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
 
-        <div class="about-project" role="presentation">
-          <p class="reveal">
-            This website doesn't have an interesting origin story, unless
-            googling "best projects to learn React" counts as a story. The Star
-            Squid Blog was built using Gatsby, and fetches its post content from
-            Contentful.
-            <br /><br />
-            On the face of it, this is not an earth-shaking project idea...
-            except to me, in a way, it was. Working on this site, I felt it was
-            all coming together - everything I've ever learned about web
-            development was for something, and that something was this. Of
-            course HTML is for writing JSX, of course CSS is meant to be used in
-            modules, of course constructing a page with reusable components is
-            the way to go. It turned out to be the most educational and
-            rewarding project I've ever done.
-          </p>
+          <div class="card reveal" role="presentation">
+            <a href="projects/flashcards.html">
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb flashcards-1"></div>
+              </div>
+            </a>
+            <h3>Flipping Flashcards</h3>
+            <p class="languages">javascript &middot; html &middot; css</p>
+            <p>
+              The study aid the world may not need. It serves flashcards from
+              different fields of study and remembers how well you remember.
+            </p>
+            <p>
+              <a href="projects/flashcards.html" class="readmore">READ MORE</a>
+              <i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
 
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal" >
-              <div class="thumb blog-1"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb blog-2"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">01.</b><br />
-            I started by designing a layout I wanted to work towards; I sketched
-            my layout on a piece of paper and then built a plain HTML + CSS
-            pair. The colour scheme was inspired by abstract book covers from
-            the 1980s.
-            <br /><br />
-            Next I started up a Gatsby project and created my page components:
-            index (post list), about and contact. I also created a primary style
-            sheet to tie the graphics together before creating the Layout
-            component that would enclose my page contents. Some of the
-            components have their own corresponding scss modules, where it
-            seemed appropriate. All scss files use global variables from a
-            separate file.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">02.</b><br />
-            Next, it was time to install the gatsby-source-contentful plugin and
-            connect the blog content. I created a page template that would be
-            used to generate individual post pages. At this point I hit the
-            greatest snag in this project. Until quite recently, the Contentful
-            API used to serve rich text data in JSON format, and the wealth of
-            instructions I thought I had at my fingertips referred to that, now
-            outdated, format. Currently rich text posts are in raw format, and
-            the only source of information is official documentation, which I
-            did not manage to implement. The best I can do for now is JSON.parse
-            the post content before rendering it with documentToReactComponents
-            from @contentful/rich-text-react-renderer. This method results in
-            readable plain text, but no access to formatting or image assets. I
-            will keep trying different things for now before giving up on
-            Contentful.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb blog-3"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb blog-4"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">05.</b><br />
-            Next I tackled the SEO by editing the siteMetadata section of
-            gatsby-config and made sure I could fetch this information on each
-            page by creating a custom hook. An SEO component renders this data
-            in the head of each page. The blog post template uses the post title
-            as its page title.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">06.</b><br />
-            When all of that was finished, I deployed the blog through Netlify
-            for the world to see. Overall, I am really happy with what I
-            accomplished here. Features I would like to add in the future are a
-            dark theme (almost ready), a tagging system, a "next post" button
-            linking directly to a newer/older post, and perhaps the option to
-            comment on posts. It could be my own bootleg social media!
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb blog-5"></div>
-            </div>
-          </a>
+          <div class="card reveal" role="presentation">
+            <a href="projects/clock.html">
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb clock-1"></div>
+              </div>
+            </a>
+            <h3>Workday Clock</h3>
+            <p class="languages">javascript &middot; html &middot; css</p>
+            <p>
+              All the benefits of an analog clock without the awkwardness of
+              roundness.
+            </p>
+            <p>
+              <a href="projects/clock.html" class="readmore">READ MORE</a>
+              <i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
         </div>
 
-        <hr />
-
-        <p class="reveal">
-          <a href="https://star-squid.github.io/Flipping-Flashcards">link</a>
-          &middot;
-          <a href="https://github.com/Star-Squid/Flipping-Flashcards">code</a>
-        </p>
-        <h3 class="reveal">Flipping Flashcards</h3>
-        <p class="reveal languages">javascript &middot; html &middot; css</p>
-
-        <div class="about-project">
-          <p class="reveal">
-            The idea for Flipping Flashcards was inspired by an online
-            discussion about studying, where the consensus was that flashcards
-            were a brilliant tool for learning anything under the sun and
-            <em>the</em> key to passing exams. This being the 21st century, I
-            was not about to make paper flashcards, but a realistic flipping
-            animation was essential to my vision. At no point did I try any
-            existing flashcard apps; it was no more than a millisecond between
-            “I’d like to try a tool like this” to “I think I can make a tool
-            like this”.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-1"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-2"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">01.</b><br />
-            The main features I envisioned for this project were:<br />
-            – the card should seem to physically flip,<br />
-            – the user should be able to upload their own content,<br />
-            – the user should be able to influence which questions get repeated
-            more often.<br />
-            <br />
-            All of these generated issues that needed solving.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">02.</b><br />
-            Coding the interface was the most fun part. For the first iteration,
-            I went a bit crazy with a retro neon design before settling on a
-            more toned down colour scheme.<br /><br />
-
-            I chose
-            <a href="https://nnattawat.github.io/flip/">jQuery Flip</a> as the
-            mechanism to handle card movement. However, it required additional
-            work to make the design accessible. (I ended up binding the space
-            key to the flip() function. In the first version, buttons for
-            assigning a rating to each card were positioned outside of the
-            actual flashcard.<br /><br />
-
-            A crucial part of the project was allowing the user to indicate how
-            well they knew the answer to each question and translating that
-            input to how often a particular card gets shown. To that end, each
-            card object is assigned a rating of 6 points when created. These
-            ratings indicate how many times the card gets copied into the
-            temporary array out of which the next random card is drawn. This
-            array gets created every time a new card is needed, so the number of
-            cards gets refreshed whenever a rating changes; the user's click on
-            one of the three rating buttons removes 2, 1, or none of the card's
-            points. This system is easy to customise - changing difficulty is as
-            easy as assigning a different rating when the card objects are first
-            created. (Difficulty level was included as an option in the
-            settings.)
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-3"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-4"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">05.</b><br />
-            There are three sets of cards hard-coded into the .js file, but
-            customising the content is an essential part of the Flipping
-            Flashcard concept. I needed a human-readable format that could also
-            be easily split into strings for use with the card factory function.
-            Researching different methods of importing external data into
-            JavaScript was a process of trial and error. The original idea was
-            to use either local Excel files or Google Sheets. As interesting as
-            it was to learn to access Google Sheets remotely through Node.js, I
-            wasn't happy with how complex the process of parsing the result was.
-            Fixation on spreadsheets led me to learn how to use the Google
-            Sheets API, followed by
-            <a href="https://github.com/bpk68/g-sheets-api#readme"
-              >Google Sheets Reader</a
-            >, veering to
-            <a href="https://www.npmjs.com/package/xlsx">SheetsJS</a> for a stab
-            at local spreadsheets, before I finally settled on importing .csv
-            instead, as the simplest, most elegant solution. Later I also
-            included the option to use a .json file.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">06.</b><br />
-            The single most important decision in the lide of this project was
-            bringing in a test user. His feedback, combined with
-            <a href="https://www.nngroup.com/articles/ten-usability-heuristics/"
-              >Jakob Nielsen's article on design heuristics</a
-            >, led me to implement the following changes from version 1.0 to
-            2.0:<br />
-            - add a welcome page with a prominent call to action,<br />
-            - automatically prompt to choose a study subject on load,<br />
-            - more muted default colour palette, with the option to choose neon
-            colours from settings,<br />
-            - integrate the rating stars into the back of the flashcard,<br />
-            - include a status box with information about the current card set,
-            the user’s progress, and current ratings,<br />
-            - introduce keyboard shortcuts,<br />
-            - remove detailed user instructions, opting instead to make the
-            interface self-explanatory by employing game-like design solutions.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-5"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb flashcards-6"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">07.</b><br />
-            This project is not completely finished and may never be. I have yet
-            to find the one best format for importing user questions; .csv is a
-            simple, convenient, readable format, but its lack of text formatting
-            features makes it only suitable for simple questions and
-            one-sentence answers. More options are offered by .json, but in both
-            cases the user has to create a file especially for use with Flipping
-            Flashcards.<br /><br />
-
-            With accessibility in mind, I made sure the interface includes
-            keyboard shortcuts for rating as well as flipping the card without
-            clicking.<br /><br />
-
-            Since this project has changed so much during development, version
-            control was essential; I took advantage of the option to work on
-            different branches without feeling like I needed to give up one
-            approach to try another. However, for the next project I will make
-            sure to follow a design plan in order to stay on track and avoid
-            working on multiple features at once.<br /><br />
-
-            Additionally, I will involve user feedback at a much earlier stage.
-            It was essential in order to flesh out Flipping Flashcards 2.0, but
-            those choices could have been made much sooner.<br /><br />
-
-            Finally, in an ironic twist, I discovered that studying with
-            flashcards is not my thing after all, and I’ve since gone back to
-            trusted mind-maps and lists.
-          </p>
-        </div>
-
-        <hr />
-
-        <p class="reveal">
-          <a href="https://star-squid.github.io/Workday-Clock/">link</a>
-          &middot;
-          <a href="https://github.com/Star-Squid/Workday-Clock">code</a>
-        </p>
-        <h3 class="reveal">Workday Clock</h3>
-        <p class="reveal languages">javascript &middot; html &middot; css</p>
-
-        <div class="about-project">
-          <p class="reveal">
-            The Workday Clock was inspired by a
-            <a href="https://youtu.be/NeopkvAP-ag"
-              >Technology Connections's video</a
-            >
-            on the benefits of analog clocks. I'd never been a fan of those;
-            couldn't quite get behind the idea that the long hand should
-            indicate the shorter unit of time, not to mention the reversal of
-            direction that comes with the round shape (the hand moves down for
-            the first 30 minutes and up for the second half).<br /><br />
-
-            However, the video changed my mind to an extent and crystallized an
-            idea: the perfect clock should provide a visual representation of
-            the length of each hour and the whole day, as well as make it easy
-            to visualize time remaining to an appointment. However, there would
-            be only one direction of travel, and any time outside of active work
-            hours would not be shown. Although work happens at all hours of the
-            day, watching the clock in the evening brings nothing but stress.<br /><br />
-
-            This clock is optimised perfectly to my needs, but should also be
-            legible to someone else without lengthy explanations.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb clock-1"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb clock-2"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">01.</b><br />
-            While the ordinary clock represents the day and each hour as a
-            circle, mine uses arch shapes, which conform better to the idea of a
-            progress bar. The larger arch shows hours between 9:00 and 18:00,
-            and the small one provides additional visualization for each hour as
-            it passes.<br /><br />
-
-            In order to achieve the shape of the clock faces, I used a
-            semi-circle conical gradient, where each colour section corresponds
-            to one hour. As a pleasant coincidence, 180 degrees of the
-            half-circle are easy to divide by the 9 hours represented, so every
-            hour is equal to 20 degrees of the half-circle.<br /><br />
-
-            Over that, I overlaid a semi-opaque conical gradient which updates
-            every minute to indicate the passage of time, and a final small
-            opaque semicircle creates the underside of the arch.<br /><br />
-
-            The appointment feature adds yet another gradient layer to the
-            middle of the stack. This solution allows for adding one custom
-            section to the clock. This is fine for my purpose, since the
-            appointment feature is only there to help visualise the time
-            remaining before it starts.<br /><br />
-
-            The small arch representing one hour has the same basic structure,
-            minus the appointment layer.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">02.</b><br />
-            The time-indicating layers of both arches are controlled by the
-            function updateTime(), which runs once on page load and then once
-            per minute. The interval is easy to adjust, but this project does
-            not need higher precision.<br /><br />
-
-            The event handler for appointment submission converts hours to
-            degrees of dome and creates a gradient section to cover the area on
-            the clock between start and end times. There is a button that clears
-            this layer. At first, activating the dialog without choosing
-            appointment times could also be used to clear this layer, but
-            allowing the user to leave either start or end time unselected was
-            too prone to errors.<br /><br />
-
-            The appointment option is accessed through a jQuery dialog box,
-            though if I was writing it today I would prefer the HTML dialog tag
-            or a modal solution optimised for accessibility. Feedback from test
-            users was invaluable in improving the behaviour of the appointment
-            feature.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb clock-3"></div>
-            </div>
-          </a>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb clock-4"></div>
-            </div>
-          </a>
-
-          <p class="reveal">
-            <b class="ordinal">05.</b><br />
-            A fun extra feature is the additional colour themes for the clock.
-            The colours and backgrounds are encoded as css variables, so
-            switching themes is as simple as swapping different :roots. This is
-            handled in JavaScript through the setTheme() function.
-          </p>
-
-          <p class="reveal">
-            <b class="ordinal">06.</b><br />
-            Since a lot of the functionality of the Workday Clock relies on
-            changing graphic elements with JavaScript, the project is quite
-            css-heavy, and makes full use of gradients, variables and
-            positioning.<br /><br />
-
-            Although I don’t use the Workday Clock every day now, I feel that
-            building it and becoming used to looking at its shapes has given me
-            a better grasp on time and helped plan each working day.
-          </p>
-
-          <a class="modal-toggle">
-            <div class="contain-thumb reveal">
-              <div class="thumb clock-5"></div>
-            </div>
-          </a>
-        </div>
         <hr />
 
         <h2 class="right-slide">Small projects</h2>
@@ -574,11 +222,31 @@
           One-concept, quick projects — that I still think are cool enough to
           share.
         </p>
-
         <div class="cards" role="presentation">
-          <div class="card reveal">
+          <div class="card reveal" role="presentation">
+            <a href="https://github.com/Star-Squid/employee-directory">
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb employee"></div>
+              </div>
+            </a>
+            <h3>Employee Directory</h3>
+            <p class="languages">react &middot; css</p>
+            <p>
+              Built in 2 weeks, this React project was made to a friend's
+              specifications in order to address a problem in his workplace. The
+              program converts .csv employee data into nicely-formatted cards
+              and offers a variety of filters for the results.
+            </p>
+            <p>
+              <a href="https://github.com/Star-Squid/employee-directory"
+                >code</a
+              >
+            </p>
+          </div>
+
+          <div class="card reveal" role="presentation">
             <a href="https://star-squid.art">
-              <div class="contain-thumb">
+              <div class="contain-thumb" role="presentation">
                 <div class="thumb art"></div>
               </div>
             </a>
@@ -593,22 +261,28 @@
             </p>
           </div>
 
-            <div class="card reveal">
-              <a href="https://mb-malta.co.uk/DiceStats/">
-                <div class="contain-thumb">
-                  <div class="thumb dice"></div>
-                </div>
-              </a>
-              <h3>Dice Stats</h3>
-              <p class="languages">javascript &middot; html &middot; css</p>
-              <p>
-                UI for an open-source dice probability-checker.
-              </p>
-              <p>
-                <a href="https://mb-malta.co.uk/DiceStats/">link</a> &middot;
-                <a href="https://github.com/Landsil/landsil.github.io/tree/master/DiceStats">code</a>
-              </p>
-            </div>
+          <div class="card reveal" role="presentation">
+            <a href="https://mb-malta.co.uk/DiceStats/">
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb dice"></div>
+              </div>
+            </a>
+            <h3>Dice Stats</h3>
+            <p class="languages">
+              javascript &middot; html &middot; css &middot; mocha
+            </p>
+            <p>
+              What started as a UI for a dice probability-checker turned into
+              full-blown code refactoring, modularisation and testing.
+            </p>
+            <p>
+              <a href="https://mb-malta.co.uk/DiceStats/">link</a> &middot;
+              <a
+                href="https://github.com/Landsil/landsil.github.io/tree/master/DiceStats"
+                >code</a
+              >
+            </p>
+          </div>
 
           <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/memory">
@@ -629,8 +303,8 @@
 
           <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/flex-cv">
-              <div class="contain-thumb">
-                <div class="thumb flex-cv"></div>
+              <div class="contain-thumb" role="presentation">
+                <div class="thumb flex-cv" role="presentation"></div>
               </div>
             </a>
             <h3>Flex CV</h3>
@@ -663,7 +337,7 @@
 
           <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/high-five">
-              <div class="contain-thumb">
+              <div class="contain-thumb" role="presentation">
                 <div class="thumb high-five"></div>
               </div>
             </a>
@@ -679,7 +353,7 @@
 
           <div class="card reveal" role="presentation">
             <a href="https://star-squid.github.io/hookd">
-              <div class="contain-thumb">
+              <div class="contain-thumb" role="presentation">
                 <div class="thumb hookd"></div>
               </div>
             </a>

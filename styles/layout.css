@@ -1,111 +1,3 @@
-html {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-:root {
-  --regular: clamp(1rem, 2vmin, 2rem);
-
-  --background: url("../img/keyboard.webp");
-
-  --transparent: rgba(1, 1, 1, 0);
-  --white: #ffffff;
-  --almostwhite: #cccccc;
-  --electricblue: #27c3f1;
-  --blue: #9dc3ce;
-  --pink: #c12240;
-  --steel: #1d3f55;
-
-  --black: #1c1618;
-  --dark: #212121;
-  --halfdark: #212121e1;
-  --medium: #3e3e3e;
-  --halfmedium: #3e3e3ecc;
-
-  --scrollbarBG: #212121;
-  --thumbBG: #cccccc;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
-  font-family: "PT Sans", sans-serif;
-  color: var(--white);
-  font-size: var(--regular);
-  text-align: justify;
-  text-justify: inter-word;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--dark);
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-  overflow-x: hidden;
-}
-
-body::-webkit-scrollbar {
-  width: 11px;
-}
-body::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
-}
-body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG);
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
-}
-
-a {
-  color: var(--blue);
-  font-weight: bolder;
-  transition: all 0.2s ease-in-out;
-}
-a:hover,
-a:active,
-a:focus {
-  color: var(--almostwhite);
-}
-
-h1 {
-  font-family: "Unica One", cursive;
-  color: var(--white);
-  font-size: calc(var(--regular) + 8vmin);
-  margin: 0px;
-  padding: 0px 0px 10px 0px;
-  font-weight: 800;
-  text-align: left;
-}
-
-h2 {
-  font-family: "Unica One", cursive;
-  font-size: calc(var(--regular) + 3vmin);
-  margin: 0px;
-  padding: 0px;
-  color: var(--almostwhite);
-}
-
-.logo {
-  text-shadow: 1px 0px 1px var(--medium), 0px 1px 1px var(--dark),
-    2px 1px 1px var(--medium), 1px 2px 1px var(--dark),
-    3px 2px 1px var(--medium), 2px 3px 1px var(--dark),
-    4px 3px 1px var(--medium), 3px 4px 1px var(--dark);
-}
-
-h3 {
-  font-family: "Unica One", cursive;
-  color: var(--almostwhite);
-  font-size: calc(var(--regular) + 1vmin);
-  padding: 0px;
-  font-weight: 800;
-  margin: 0px;
-}
-
 .container {
   position: relative;
   padding: 0px;
@@ -128,13 +20,6 @@ h3 {
   }
 }
 
-/* #header,
-#about,
-#projects,
-#contact {
-  scroll-snap-align: start;
-} */
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -149,6 +34,8 @@ h3 {
 
 hr {
   border-style: dashed none none;
+  border-width: thin;
+  border-color: var(--almostwhite);
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
@@ -180,12 +67,12 @@ hr {
 }
 
 .links li {
-  padding: 32px;
+  padding: 1rem;
   display: list-item;
   text-align: center;
 }
 
-.skip-link a{
+.skip-link a {
   position: fixed;
   left: 0;
   right: 0;
@@ -464,185 +351,6 @@ section {
   height: 100%;
 }
 
-.blog-1 {
-  background: url("../thumbs/blog-1.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.blog-2 {
-  background: url("../thumbs/blog-2.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.blog-3 {
-  background: url("../thumbs/blog-3.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.blog-4 {
-  background: url("../thumbs/blog-4.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.blog-5 {
-  background: url("../thumbs/blog-5.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.dice {
-  background: url("../thumbs/dice.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.flashcards-1 {
-  background: url("../thumbs/flashcards-1.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.flashcards-2 {
-  background: url("../thumbs/flashcards-2.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.flashcards-3 {
-  background: url("../thumbs/flashcards-3.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.flashcards-4 {
-  background: url("../thumbs/flashcards-4.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.flashcards-5 {
-  background: url("../thumbs/flashcards-5.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.flashcards-6 {
-  background: url("../thumbs/flashcards-6.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.clock-1 {
-  background: url("../thumbs/clock-1.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.clock-2 {
-  background: url("../thumbs/clock-2.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.clock-3 {
-  background: url("../thumbs/clock-3.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.clock-4 {
-  background: url("../thumbs/clock-4.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-.clock-5 {
-  background: url("../thumbs/clock-5.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.art {
-  background: url("../thumbs/art.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.memory {
-  background: url("../thumbs/memory.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.flex-cv {
-  background: url("../thumbs/flex-cv.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.portfolio-retro {
-  background: url("../thumbs/portfolio-retro.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.high-five {
-  background: url("../thumbs/high-five.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.hookd {
-  background: url("../thumbs/hookd.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
-.family {
-  background: url("../thumbs/family.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1s;
-}
-
 .thumb:hover {
   transform: scale(1.2);
 }
@@ -660,6 +368,12 @@ section {
   margin-bottom: 1rem;
   margin-top: 1rem;
   text-align: right;
+}
+
+.card .readmore {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
 }
 
 .card > a {
@@ -925,7 +639,7 @@ input[type="checkbox"]:checked {
   width: 80%;
   padding: 16px;
   /* border-radius: 5px;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35); */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35); */
   z-index: 3;
 
   text-align: center;

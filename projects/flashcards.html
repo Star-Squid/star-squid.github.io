@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Web development projects inside a web development project"
+    />
+    <meta name="author" content="Barbara Malta" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipping Flashcards - Barbara's Portfolio</title>
+
+    <!-- favicons -->
+    <link rel="icon" href="../icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+
+    <!-- styles, fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/layout.css" rel="stylesheet" />
+    <link href="../styles/card-thumbs.css" rel="stylesheet" />
+    <link href="../styles/single-projects.css" rel="stylesheet" />
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/2a2cd0823a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/index.js" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <div class="container" role="presentation">
+      <nav class="links">
+        <ul>
+          <li class="skip-link">
+            <a href="#projects"> skip to main content</a>
+          </li>
+          <li>
+            <a href="../index.html">
+              <h2 class="logo">BM</h2>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html#about"> about </a>
+          </li>
+          <li>
+            <a href="../index.html#projects"> projects </a>
+          </li>
+          <li>
+            <a href="../index.html#contact"> contact </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="icons">
+        <ul>
+          <li>
+            <a href="mailto:barbara@mb-malta.co.uk"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/barbara-malta"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/Star-Squid"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="header">
+        <div class="hello" role="presentation">
+          <div class="greeting reveal" role="heading">
+            <h1>Flipping Flashcards</h1>
+          </div>
+          <div class="description reveal" role="heading">
+            the study aid the world doesn't need
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <p class="reveal">
+          <a href="https://star-squid.github.io/Flipping-Flashcards"
+            >view in browser</a
+          >
+          &middot;
+          <a href="https://github.com/Star-Squid/Flipping-Flashcards"
+            >view code</a
+          >
+        </p>
+        <p class="reveal languages">javascript &middot; html &middot; css</p>
+
+        <div class="about-project" role="presentation">
+          <p class="reveal">
+            The idea for Flipping Flashcards was inspired by an online
+            discussion about studying, where the consensus was that flashcards
+            were a brilliant tool for learning anything under the sun and
+            <em>the</em> key to passing exams. This being the 21st century, I
+            was not about to make paper flashcards, but a realistic flipping
+            animation was essential to my vision. At no point did I try any
+            existing flashcard apps; it was no more than a millisecond between
+            “I’d like to try a tool like this” to “I think I can make a tool
+            like this”.
+          </p>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-1" role="presentation"></div>
+            </div>
+          </a>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-2" role="presentation"></div>
+            </div>
+          </a>
+
+          <p class="reveal">
+            <b class="ordinal">01.</b><br />
+            The main features I envisioned for this project were:<br />
+            – the card should seem to physically flip,<br />
+            – the user should be able to upload their own content,<br />
+            – the user should be able to influence which questions get repeated
+            more often.<br />
+            <br />
+            All of these generated issues that needed solving.
+          </p>
+
+          <p class="reveal">
+            <b class="ordinal">02.</b><br />
+            Coding the interface was the most fun part. For the first iteration,
+            I went a bit crazy with a retro neon design before settling on a
+            more toned down colour scheme.<br /><br />
+
+            I chose
+            <a href="https://nnattawat.github.io/flip/">jQuery Flip</a> as the
+            mechanism to handle card movement. However, it required additional
+            work to make the design accessible. (I ended up binding the space
+            key to the flip() function. In the first version, buttons for
+            assigning a rating to each card were positioned outside of the
+            actual flashcard.<br /><br />
+
+            A crucial part of the project was allowing the user to indicate how
+            well they knew the answer to each question and translating that
+            input to how often a particular card gets shown. To that end, each
+            card object is assigned a rating of 6 points when created. These
+            ratings indicate how many times the card gets copied into the
+            temporary array out of which the next random card is drawn. This
+            array gets created every time a new card is needed, so the number of
+            cards gets refreshed whenever a rating changes; the user's click on
+            one of the three rating buttons removes 2, 1, or none of the card's
+            points. This system is easy to customise - changing difficulty is as
+            easy as assigning a different rating when the card objects are first
+            created. (Difficulty level was included as an option in the
+            settings.)
+          </p>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-3" role="presentation"></div>
+            </div>
+          </a>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-4" role="presentation"></div>
+            </div>
+          </a>
+
+          <p class="reveal">
+            <b class="ordinal">05.</b><br />
+            There are three sets of cards hard-coded into the .js file, but
+            customising the content is an essential part of the Flipping
+            Flashcard concept. I needed a human-readable format that could also
+            be easily split into strings for use with the card factory function.
+            Researching different methods of importing external data into
+            JavaScript was a process of trial and error. The original idea was
+            to use either local Excel files or Google Sheets. As interesting as
+            it was to learn to access Google Sheets remotely through Node.js, I
+            wasn't happy with how complex the process of parsing the result was.
+            Fixation on spreadsheets led me to learn how to use the Google
+            Sheets API, followed by
+            <a href="https://github.com/bpk68/g-sheets-api#readme"
+              >Google Sheets Reader</a
+            >, veering to
+            <a href="https://www.npmjs.com/package/xlsx">SheetsJS</a> for a stab
+            at local spreadsheets, before I finally settled on importing .csv
+            instead, as the simplest, most elegant solution. Later I also
+            included the option to use a .json file.
+          </p>
+
+          <p class="reveal">
+            <b class="ordinal">06.</b><br />
+            The single most important decision in the lide of this project was
+            bringing in a test user. His feedback, combined with
+            <a href="https://www.nngroup.com/articles/ten-usability-heuristics/"
+              >Jakob Nielsen's article on design heuristics</a
+            >, led me to implement the following changes from version 1.0 to
+            2.0:<br />
+            - add a welcome page with a prominent call to action,<br />
+            - automatically prompt to choose a study subject on load,<br />
+            - more muted default colour palette, with the option to choose neon
+            colours from settings,<br />
+            - integrate the rating stars into the back of the flashcard,<br />
+            - include a status box with information about the current card set,
+            the user’s progress, and current ratings,<br />
+            - introduce keyboard shortcuts,<br />
+            - remove detailed user instructions, opting instead to make the
+            interface self-explanatory by employing game-like design solutions.
+          </p>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-5" role="presentation"></div>
+            </div>
+          </a>
+
+          <a class="modal-toggle">
+            <div class="contain-thumb reveal" role="presentation">
+              <div class="thumb flashcards-6" role="presentation"></div>
+            </div>
+          </a>
+
+          <p class="reveal">
+            <b class="ordinal">07.</b><br />
+            This project is not completely finished and may never be. I have yet
+            to find the one best format for importing user questions; .csv is a
+            simple, convenient, readable format, but its lack of text formatting
+            features makes it only suitable for simple questions and
+            one-sentence answers. More options are offered by .json, but in both
+            cases the user has to create a file especially for use with Flipping
+            Flashcards.<br /><br />
+
+            With accessibility in mind, I made sure the interface includes
+            keyboard shortcuts for rating as well as flipping the card without
+            clicking.<br /><br />
+
+            Since this project has changed so much during development, version
+            control was essential; I took advantage of the option to work on
+            different branches without feeling like I needed to give up one
+            approach to try another. However, for the next project I will make
+            sure to follow a design plan in order to stay on track and avoid
+            working on multiple features at once.<br /><br />
+
+            Additionally, I will involve user feedback at a much earlier stage.
+            It was essential in order to flesh out Flipping Flashcards 2.0, but
+            those choices could have been made much sooner.<br /><br />
+
+            Finally, in an ironic twist, I discovered that studying with
+            flashcards is not my thing after all, and I’ve since gone back to
+            trusted mind-maps and lists.
+          </p>
+        </div>
+      </section>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>
